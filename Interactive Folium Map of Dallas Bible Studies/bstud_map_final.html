@@ -1,0 +1,2011 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_2a10654b688e7ca7e256f1ab00471885 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+<div style="position: fixed; 
+            bottom: 10px; left: 10px; width: 150px; 
+            background-color: white; border:2px solid grey; z-index:9999; font-size:12px; padding: 5px;">
+    <p style="margin-bottom: 3px;"><b>Legend</b></p><p style="margin: 2px;"><i class="fa fa-map-marker fa-2x" style="color:lightblue;"></i> Male: Current Leader</p><p style="margin: 2px;"><i class="fa fa-map-marker fa-2x" style="color:green;"></i> Male: New Leader</p><p style="margin: 2px;"><i class="fa fa-map-marker fa-2x" style="color:orange;"></i> Male: New Attendee</p><p style="margin: 2px;"><i class="fa fa-map-marker fa-2x" style="color:black;"></i> Male: No Bstud Interest</p><p style="margin: 2px;"><i class="fa fa-map-marker fa-2x" style="color:pink;"></i> Female: Current Leader</p><p style="margin: 2px;"><i class="fa fa-map-marker fa-2x" style="color:yellow;"></i> Female: New Leader</p><p style="margin: 2px;"><i class="fa fa-map-marker fa-2x" style="color:red;"></i> Female: New Attendee</p><p style="margin: 2px;"><i class="fa fa-map-marker fa-2x" style="color:gray;"></i> Female: No Bstud Interest</p></div>
+    
+            <div class="folium-map" id="map_2a10654b688e7ca7e256f1ab00471885" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_2a10654b688e7ca7e256f1ab00471885 = L.map(
+                "map_2a10654b688e7ca7e256f1ab00471885",
+                {
+                    center: [32.7767, -96.797],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 10,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_147e8383c1c811a78dab8c9eaa177b8d = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_147e8383c1c811a78dab8c9eaa177b8d.addTo(map_2a10654b688e7ca7e256f1ab00471885);
+        
+    
+            var marker_cluster_1ea4b7cabdb1869fe88f1bd284a76a96 = L.markerClusterGroup(
+                {}
+            );
+        
+    
+            var marker_77c32de7919e3cd101f0591b9b9183f3 = L.marker(
+                [32.8034, -96.7984],
+                {}
+            ).addTo(marker_cluster_1ea4b7cabdb1869fe88f1bd284a76a96);
+        
+    
+            var icon_7e318b85ca52448e1706f31426e61998 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "yellow", "prefix": "glyphicon"}
+            );
+            marker_77c32de7919e3cd101f0591b9b9183f3.setIcon(icon_7e318b85ca52448e1706f31426e61998);
+        
+    
+        var popup_fbf2ad474310513b5afc4d3edb90b052 = L.popup({"maxWidth": 300, "minWidth": 250, "style": "width: 300px;"});
+
+        
+            
+                var html_b53dc8c0de7a1ad43f02a63e9894c3fc = $(`<div id="html_b53dc8c0de7a1ad43f02a63e9894c3fc" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Frances Peterman Peterman<br><b>Parish:</b> St. Thomas Aquinas<br><b>Current Faith:</b> nan<br><b>Faith Goals:</b> nan<br><b>Activity Interests:</b> Serve Local Community, Discipleship<br><b>Additional Notes:</b> nan</div>`)[0];
+                popup_fbf2ad474310513b5afc4d3edb90b052.setContent(html_b53dc8c0de7a1ad43f02a63e9894c3fc);
+            
+        
+
+        marker_77c32de7919e3cd101f0591b9b9183f3.bindPopup(popup_fbf2ad474310513b5afc4d3edb90b052)
+        ;
+
+        
+    
+    
+            var marker_2e33fd947ef7ea46987fea694aa7a6e8 = L.marker(
+                [32.8874, -96.7173],
+                {}
+            ).addTo(marker_cluster_1ea4b7cabdb1869fe88f1bd284a76a96);
+        
+    
+            var icon_26d27a8dffa606c282682c9c33562fe5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "lightblue", "prefix": "glyphicon"}
+            );
+            marker_2e33fd947ef7ea46987fea694aa7a6e8.setIcon(icon_26d27a8dffa606c282682c9c33562fe5);
+        
+    
+        var popup_acdf6ad21f3c262c7367709acd27bf87 = L.popup({"maxWidth": 300, "minWidth": 250, "style": "width: 300px;"});
+
+        
+            
+                var html_05b5d9d695e9bb0d84fd7fa279ef18d9 = $(`<div id="html_05b5d9d695e9bb0d84fd7fa279ef18d9" style="width: 100.0%; height: 100.0%;"><b>Name:</b> John Paul Nguyen<br><b>Parish:</b> Christ The King<br><b>Current Faith:</b> Bad<br><b>Faith Goals:</b> nan<br><b>Activity Interests:</b> Serve Local Community, Attend Sunday Mass, Attend Daily Mass, Adoration / Consistent Prayer Time, Regular Confession<br><b>Additional Notes:</b> nan</div>`)[0];
+                popup_acdf6ad21f3c262c7367709acd27bf87.setContent(html_05b5d9d695e9bb0d84fd7fa279ef18d9);
+            
+        
+
+        marker_2e33fd947ef7ea46987fea694aa7a6e8.bindPopup(popup_acdf6ad21f3c262c7367709acd27bf87)
+        ;
+
+        
+    
+    
+            var marker_53c01adba0080fab03c0fb862ecfcba7 = L.marker(
+                [33.0806, -96.8928],
+                {}
+            ).addTo(marker_cluster_1ea4b7cabdb1869fe88f1bd284a76a96);
+        
+    
+            var icon_221a8f480c603763d45d416e4a5ae2d8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "yellow", "prefix": "glyphicon"}
+            );
+            marker_53c01adba0080fab03c0fb862ecfcba7.setIcon(icon_221a8f480c603763d45d416e4a5ae2d8);
+        
+    
+        var popup_cf10ea6ae617082aa8b89197b50294d0 = L.popup({"maxWidth": 300, "minWidth": 250, "style": "width: 300px;"});
+
+        
+            
+                var html_c454300e29a64d8e54263d902affdb69 = $(`<div id="html_c454300e29a64d8e54263d902affdb69" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Lauren Rice<br><b>Parish:</b> Saint Ann’s<br><b>Current Faith:</b> nan<br><b>Faith Goals:</b> nan<br><b>Activity Interests:</b> Serve Local Community, Spiritual / Intellectual / Human Formation<br><b>Additional Notes:</b> nan</div>`)[0];
+                popup_cf10ea6ae617082aa8b89197b50294d0.setContent(html_c454300e29a64d8e54263d902affdb69);
+            
+        
+
+        marker_53c01adba0080fab03c0fb862ecfcba7.bindPopup(popup_cf10ea6ae617082aa8b89197b50294d0)
+        ;
+
+        
+    
+    
+            var marker_dc5544cfd55daecc811b941ac3c3371e = L.marker(
+                [32.7555, -97.3308],
+                {}
+            ).addTo(marker_cluster_1ea4b7cabdb1869fe88f1bd284a76a96);
+        
+    
+            var icon_48fd6815e636ccbf8956ef772f309b7e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "gray", "prefix": "glyphicon"}
+            );
+            marker_dc5544cfd55daecc811b941ac3c3371e.setIcon(icon_48fd6815e636ccbf8956ef772f309b7e);
+        
+    
+        var popup_c5fea46ce0f60311bba34b97f04e878a = L.popup({"maxWidth": 300, "minWidth": 250, "style": "width: 300px;"});
+
+        
+            
+                var html_5be0d84d9da76169b3b5e5cd996ab796 = $(`<div id="html_5be0d84d9da76169b3b5e5cd996ab796" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Sarah Tisdel<br><b>Parish:</b> Saint Andrew’s or Saint Patrick’s <br><b>Current Faith:</b> Daily prayer, weekly mass, catechism/apologetics studies<br><b>Faith Goals:</b> Growth in the virtues<br><b>Activity Interests:</b> Attend Young Adult Parish Events, Serve Local Community, Discipleship<br><b>Additional Notes:</b> nan</div>`)[0];
+                popup_c5fea46ce0f60311bba34b97f04e878a.setContent(html_5be0d84d9da76169b3b5e5cd996ab796);
+            
+        
+
+        marker_dc5544cfd55daecc811b941ac3c3371e.bindPopup(popup_c5fea46ce0f60311bba34b97f04e878a)
+        ;
+
+        
+    
+    
+            var marker_dd55ea43fef7b07cc11fd1a63eee7ee2 = L.marker(
+                [32.7555, -97.3308],
+                {}
+            ).addTo(marker_cluster_1ea4b7cabdb1869fe88f1bd284a76a96);
+        
+    
+            var icon_9a8e8041316bbd1542d2435088f40b3e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "gray", "prefix": "glyphicon"}
+            );
+            marker_dd55ea43fef7b07cc11fd1a63eee7ee2.setIcon(icon_9a8e8041316bbd1542d2435088f40b3e);
+        
+    
+        var popup_0409b958c496e5893357434ddd5c3164 = L.popup({"maxWidth": 300, "minWidth": 250, "style": "width: 300px;"});
+
+        
+            
+                var html_3c2004ce1c8bed2cd58ab6500651015f = $(`<div id="html_3c2004ce1c8bed2cd58ab6500651015f" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Joanne Biju<br><b>Parish:</b> St. Patrick’s <br><b>Current Faith:</b> It’s a work in progress, but I’m currently in two Bible studies and helping out as a Catechist aide at my parish! <br><b>Faith Goals:</b> I’d love grow in faith through community and mission <br><b>Activity Interests:</b> Attend Young Adult Parish Events, Serve Local Community, Attend Sunday Mass, Adoration / Consistent Prayer Time, Spiritual / Intellectual / Human Formation<br><b>Additional Notes:</b> nan</div>`)[0];
+                popup_0409b958c496e5893357434ddd5c3164.setContent(html_3c2004ce1c8bed2cd58ab6500651015f);
+            
+        
+
+        marker_dd55ea43fef7b07cc11fd1a63eee7ee2.bindPopup(popup_0409b958c496e5893357434ddd5c3164)
+        ;
+
+        
+    
+    
+            var marker_b70e289d7b006b2c1e512037d80a7198 = L.marker(
+                [33.1507, -96.8236],
+                {}
+            ).addTo(marker_cluster_1ea4b7cabdb1869fe88f1bd284a76a96);
+        
+    
+            var icon_84dabaddbfb276387e40f600242900d6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "yellow", "prefix": "glyphicon"}
+            );
+            marker_b70e289d7b006b2c1e512037d80a7198.setIcon(icon_84dabaddbfb276387e40f600242900d6);
+        
+    
+        var popup_6afd1ed1672ae1b5f5fde398e4ebe511 = L.popup({"maxWidth": 300, "minWidth": 250, "style": "width: 300px;"});
+
+        
+            
+                var html_eb6d1dc7680ee37c6265b25b27f7ceb1 = $(`<div id="html_eb6d1dc7680ee37c6265b25b27f7ceb1" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Brielle Bobbora<br><b>Parish:</b> St Francis of Assisi Frisco / Our Lady of Angels Allen <br><b>Current Faith:</b> I am working on my personal prayer life, attending Sunday Mass and reconciliation <br><b>Faith Goals:</b> I feel like I am missing community and accountability. I would love to join a Bible study and start attending daily mass and adoration more often. <br><b>Activity Interests:</b> Join a Bible Study, Attend Young Adult Parish Events, Serve Local Community, Attend Sunday Mass, Attend Daily Mass, Adoration / Consistent Prayer Time, Regular Confession, Spiritual / Intellectual / Human Formation, Discipleship<br><b>Additional Notes:</b> Thank you guys so much for doing this! I feel like it is an answered prayer for me because I have been desiring community so this is so awesome!</div>`)[0];
+                popup_6afd1ed1672ae1b5f5fde398e4ebe511.setContent(html_eb6d1dc7680ee37c6265b25b27f7ceb1);
+            
+        
+
+        marker_b70e289d7b006b2c1e512037d80a7198.bindPopup(popup_6afd1ed1672ae1b5f5fde398e4ebe511)
+        ;
+
+        
+    
+    
+            var marker_8248a2e2723735f667335daa3c32b16a = L.marker(
+                [32.7555, -97.3308],
+                {}
+            ).addTo(marker_cluster_1ea4b7cabdb1869fe88f1bd284a76a96);
+        
+    
+            var icon_c6f9c72de2f6cdc210da82d9b3d4e1b8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_8248a2e2723735f667335daa3c32b16a.setIcon(icon_c6f9c72de2f6cdc210da82d9b3d4e1b8);
+        
+    
+        var popup_c1495a82cc5d69606b9c70cbba964c6d = L.popup({"maxWidth": 300, "minWidth": 250, "style": "width: 300px;"});
+
+        
+            
+                var html_715acc7d26a90dbcdf32c9e3cc8e49d3 = $(`<div id="html_715acc7d26a90dbcdf32c9e3cc8e49d3" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Rey  Elvira<br><b>Parish:</b> St. Patrick’s Cathedral<br><b>Current Faith:</b> Practice anyway I can with lots of room to grow ! <br><b>Faith Goals:</b> Community, accountability, and prayer. <br><b>Activity Interests:</b> Attend Young Adult Parish Events, Serve Local Community, Attend Sunday Mass, Attend Daily Mass, Adoration / Consistent Prayer Time, Regular Confession, Spiritual / Intellectual / Human Formation<br><b>Additional Notes:</b> nan</div>`)[0];
+                popup_c1495a82cc5d69606b9c70cbba964c6d.setContent(html_715acc7d26a90dbcdf32c9e3cc8e49d3);
+            
+        
+
+        marker_8248a2e2723735f667335daa3c32b16a.bindPopup(popup_c1495a82cc5d69606b9c70cbba964c6d)
+        ;
+
+        
+    
+    
+            var marker_40f0c5679b8410bb69dafbba3100295c = L.marker(
+                [32.7555, -97.3308],
+                {}
+            ).addTo(marker_cluster_1ea4b7cabdb1869fe88f1bd284a76a96);
+        
+    
+            var icon_a63635284ad6bf8fea4a6b57f84a2cbc = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_40f0c5679b8410bb69dafbba3100295c.setIcon(icon_a63635284ad6bf8fea4a6b57f84a2cbc);
+        
+    
+        var popup_313a14cf73f45b36ddc60b75cce8d83a = L.popup({"maxWidth": 300, "minWidth": 250, "style": "width: 300px;"});
+
+        
+            
+                var html_e0781ed1ae707ff556ce675db8fa444c = $(`<div id="html_e0781ed1ae707ff556ce675db8fa444c" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Grace Snyder<br><b>Parish:</b> St. Andrew/ St. Patrick<br><b>Current Faith:</b> Regularly reviving sacraments, etc. <br><b>Faith Goals:</b> I would love to join a bible study <br><b>Activity Interests:</b> Join a Bible Study, Attend Young Adult Parish Events, Attend Sunday Mass, Attend Daily Mass, Adoration / Consistent Prayer Time, Regular Confession, Spiritual / Intellectual / Human Formation<br><b>Additional Notes:</b> nan</div>`)[0];
+                popup_313a14cf73f45b36ddc60b75cce8d83a.setContent(html_e0781ed1ae707ff556ce675db8fa444c);
+            
+        
+
+        marker_40f0c5679b8410bb69dafbba3100295c.bindPopup(popup_313a14cf73f45b36ddc60b75cce8d83a)
+        ;
+
+        
+    
+    
+            var marker_428b8b1be0128a1dc5b4be7cb5930a27 = L.marker(
+                [32.7555, -97.3308],
+                {}
+            ).addTo(marker_cluster_1ea4b7cabdb1869fe88f1bd284a76a96);
+        
+    
+            var icon_18a12ace74df760afbd293e086d2acb0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "yellow", "prefix": "glyphicon"}
+            );
+            marker_428b8b1be0128a1dc5b4be7cb5930a27.setIcon(icon_18a12ace74df760afbd293e086d2acb0);
+        
+    
+        var popup_e175ba1f2c9e792ecd103726fd24cae3 = L.popup({"maxWidth": 300, "minWidth": 250, "style": "width: 300px;"});
+
+        
+            
+                var html_4157d39e4fe6661e0fec2203d0935f0c = $(`<div id="html_4157d39e4fe6661e0fec2203d0935f0c" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Mary Kathryn  O’Dwyer<br><b>Parish:</b> St Patrick’s cathedral <br><b>Current Faith:</b> Daily prayer, daily mass 3-4 days a week, monthly confession, scripture studies<br><b>Faith Goals:</b> Involved in community and gain accountability and gain more knowledge on understanding catechism <br><b>Activity Interests:</b> Join a Bible Study, Lead a Bible Study, Attend Young Adult Parish Events, Serve Local Community, Spiritual / Intellectual / Human Formation, Discipleship<br><b>Additional Notes:</b> I’m not super connected to the area as I just move here but I loved being involved in focus in college and would love to help with any future events y’all do as liaisons </div>`)[0];
+                popup_e175ba1f2c9e792ecd103726fd24cae3.setContent(html_4157d39e4fe6661e0fec2203d0935f0c);
+            
+        
+
+        marker_428b8b1be0128a1dc5b4be7cb5930a27.bindPopup(popup_e175ba1f2c9e792ecd103726fd24cae3)
+        ;
+
+        
+    
+    
+            var marker_21274783a95837dbcb4abff8824902f0 = L.marker(
+                [32.7555, -97.3308],
+                {}
+            ).addTo(marker_cluster_1ea4b7cabdb1869fe88f1bd284a76a96);
+        
+    
+            var icon_2280dce5120fa2ce17c7169531f78974 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "pink", "prefix": "glyphicon"}
+            );
+            marker_21274783a95837dbcb4abff8824902f0.setIcon(icon_2280dce5120fa2ce17c7169531f78974);
+        
+    
+        var popup_140bc11ce311e80a77befff8838fcec6 = L.popup({"maxWidth": 300, "minWidth": 250, "style": "width: 300px;"});
+
+        
+            
+                var html_fb500a72086eca1797be60fe5cabe484 = $(`<div id="html_fb500a72086eca1797be60fe5cabe484" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Ashley Mendenhall<br><b>Parish:</b> St. Patrick’s Cathedral/ St. Andrew’s <br><b>Current Faith:</b> Daily prayer, regular confession, bible study <br><b>Faith Goals:</b> nan<br><b>Activity Interests:</b> Attend Young Adult Parish Events, Serve Local Community, Attend Sunday Mass, Adoration / Consistent Prayer Time, Regular Confession, Spiritual / Intellectual / Human Formation<br><b>Additional Notes:</b> nan</div>`)[0];
+                popup_140bc11ce311e80a77befff8838fcec6.setContent(html_fb500a72086eca1797be60fe5cabe484);
+            
+        
+
+        marker_21274783a95837dbcb4abff8824902f0.bindPopup(popup_140bc11ce311e80a77befff8838fcec6)
+        ;
+
+        
+    
+    
+            var marker_459b0cabc9f5743f6e85900df54fe8d5 = L.marker(
+                [32.9756, -96.89],
+                {}
+            ).addTo(marker_cluster_1ea4b7cabdb1869fe88f1bd284a76a96);
+        
+    
+            var icon_6d87fecfcc9d8c4a98b33346bf1c0cb1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_459b0cabc9f5743f6e85900df54fe8d5.setIcon(icon_6d87fecfcc9d8c4a98b33346bf1c0cb1);
+        
+    
+        var popup_6c75c91b1e6c2b2cb625d1d06470e0ce = L.popup({"maxWidth": 300, "minWidth": 250, "style": "width: 300px;"});
+
+        
+            
+                var html_09ec202251d34b857e8f4f22c950165e = $(`<div id="html_09ec202251d34b857e8f4f22c950165e" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Troy Lirette<br><b>Parish:</b> St. Ann<br><b>Current Faith:</b> nan<br><b>Faith Goals:</b> Continuing to surround myself with virtuous friends! <br><b>Activity Interests:</b> Join a Bible Study, Lead a Bible Study, Adoration / Consistent Prayer Time, Regular Confession, Discipleship<br><b>Additional Notes:</b> nan</div>`)[0];
+                popup_6c75c91b1e6c2b2cb625d1d06470e0ce.setContent(html_09ec202251d34b857e8f4f22c950165e);
+            
+        
+
+        marker_459b0cabc9f5743f6e85900df54fe8d5.bindPopup(popup_6c75c91b1e6c2b2cb625d1d06470e0ce)
+        ;
+
+        
+    
+    
+            var marker_7c162c7b4cb99b3431c15c19df7b7173 = L.marker(
+                [32.8034, -96.7984],
+                {}
+            ).addTo(marker_cluster_1ea4b7cabdb1869fe88f1bd284a76a96);
+        
+    
+            var icon_8600e138f53d7e7bd541b3ea59f529a9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
+            );
+            marker_7c162c7b4cb99b3431c15c19df7b7173.setIcon(icon_8600e138f53d7e7bd541b3ea59f529a9);
+        
+    
+        var popup_d46e77cb80cf278007231b74c3d133ba = L.popup({"maxWidth": 300, "minWidth": 250, "style": "width: 300px;"});
+
+        
+            
+                var html_ce914e2d581baf84877f28783a1f13f5 = $(`<div id="html_ce914e2d581baf84877f28783a1f13f5" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Jacob Otto<br><b>Parish:</b> Holy Trinity<br><b>Current Faith:</b> Living in the sacraments, looking to grow deeper in relationship with the Lord<br><b>Faith Goals:</b> Growth in personal relationship with the Lord and experiencing fruits of the spirit<br><b>Activity Interests:</b> Serve Local Community, Adoration / Consistent Prayer Time, Spiritual / Intellectual / Human Formation<br><b>Additional Notes:</b> nan</div>`)[0];
+                popup_d46e77cb80cf278007231b74c3d133ba.setContent(html_ce914e2d581baf84877f28783a1f13f5);
+            
+        
+
+        marker_7c162c7b4cb99b3431c15c19df7b7173.bindPopup(popup_d46e77cb80cf278007231b74c3d133ba)
+        ;
+
+        
+    
+    
+            var marker_0659c2394a98b7828d0009dc7531af7d = L.marker(
+                [32.8034, -96.7984],
+                {}
+            ).addTo(marker_cluster_1ea4b7cabdb1869fe88f1bd284a76a96);
+        
+    
+            var icon_f6efda1a096728d8667b4a63b12fc8ae = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_0659c2394a98b7828d0009dc7531af7d.setIcon(icon_f6efda1a096728d8667b4a63b12fc8ae);
+        
+    
+        var popup_09ae3c685e00651abcf153e6a66fd929 = L.popup({"maxWidth": 300, "minWidth": 250, "style": "width: 300px;"});
+
+        
+            
+                var html_eed6d01c4e3a02d133724805787e3935 = $(`<div id="html_eed6d01c4e3a02d133724805787e3935" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Gabby Bittner<br><b>Parish:</b> Holy Trinity <br><b>Current Faith:</b> Mass on weekend, adoration and confession here and there. <br><b>Faith Goals:</b> I would like to be in a bible study!<br><b>Activity Interests:</b> Join a Bible Study, Serve Local Community<br><b>Additional Notes:</b> Thanks for organizing this :)</div>`)[0];
+                popup_09ae3c685e00651abcf153e6a66fd929.setContent(html_eed6d01c4e3a02d133724805787e3935);
+            
+        
+
+        marker_0659c2394a98b7828d0009dc7531af7d.bindPopup(popup_09ae3c685e00651abcf153e6a66fd929)
+        ;
+
+        
+    
+    
+            var marker_7bb0d545edfc150fde019b6c0f00a0a0 = L.marker(
+                [32.8874, -96.7173],
+                {}
+            ).addTo(marker_cluster_1ea4b7cabdb1869fe88f1bd284a76a96);
+        
+    
+            var icon_ee80099985dd809e62de7bf440022cb1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "lightblue", "prefix": "glyphicon"}
+            );
+            marker_7bb0d545edfc150fde019b6c0f00a0a0.setIcon(icon_ee80099985dd809e62de7bf440022cb1);
+        
+    
+        var popup_b4eb2f9f04833da1d3087e45d84c86d2 = L.popup({"maxWidth": 300, "minWidth": 250, "style": "width: 300px;"});
+
+        
+            
+                var html_f44cbf81897e79d622f82cbc392cfbf7 = $(`<div id="html_f44cbf81897e79d622f82cbc392cfbf7" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Chris Tarantino<br><b>Parish:</b> St Rita<br><b>Current Faith:</b> Kind of dry right now<br><b>Faith Goals:</b> More contemplative<br><b>Activity Interests:</b> Lead a Bible Study, Attend Young Adult Parish Events, Serve Local Community, Attend Sunday Mass, Adoration / Consistent Prayer Time, Regular Confession, Spiritual / Intellectual / Human Formation<br><b>Additional Notes:</b> Great job!</div>`)[0];
+                popup_b4eb2f9f04833da1d3087e45d84c86d2.setContent(html_f44cbf81897e79d622f82cbc392cfbf7);
+            
+        
+
+        marker_7bb0d545edfc150fde019b6c0f00a0a0.bindPopup(popup_b4eb2f9f04833da1d3087e45d84c86d2)
+        ;
+
+        
+    
+    
+            var marker_a908da790fe1a531d156e243ef62a114 = L.marker(
+                [32.7555, -97.3308],
+                {}
+            ).addTo(marker_cluster_1ea4b7cabdb1869fe88f1bd284a76a96);
+        
+    
+            var icon_0d9e943b27b400573c0b0bb78178ea8e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_a908da790fe1a531d156e243ef62a114.setIcon(icon_0d9e943b27b400573c0b0bb78178ea8e);
+        
+    
+        var popup_0caa54efeadf83877a93d3d7e52e487c = L.popup({"maxWidth": 300, "minWidth": 250, "style": "width: 300px;"});
+
+        
+            
+                var html_5c2ccf76155e4db44ecb618cc90c0591 = $(`<div id="html_5c2ccf76155e4db44ecb618cc90c0591" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Megan O’Dwyer<br><b>Parish:</b> St.Patrick’s Cathedral<br><b>Current Faith:</b> Good but would like to get involved<br><b>Faith Goals:</b> Get more involved <br><b>Activity Interests:</b> Join a Bible Study, Attend Young Adult Parish Events, Serve Local Community, Attend Sunday Mass, Adoration / Consistent Prayer Time, Spiritual / Intellectual / Human Formation<br><b>Additional Notes:</b> nan</div>`)[0];
+                popup_0caa54efeadf83877a93d3d7e52e487c.setContent(html_5c2ccf76155e4db44ecb618cc90c0591);
+            
+        
+
+        marker_a908da790fe1a531d156e243ef62a114.bindPopup(popup_0caa54efeadf83877a93d3d7e52e487c)
+        ;
+
+        
+    
+    
+            var marker_30f75686e433f9d334b81306e444516d = L.marker(
+                [33.1507, -96.8236],
+                {}
+            ).addTo(marker_cluster_1ea4b7cabdb1869fe88f1bd284a76a96);
+        
+    
+            var icon_9231c4a07159d043bf26bfbee09bea35 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_30f75686e433f9d334b81306e444516d.setIcon(icon_9231c4a07159d043bf26bfbee09bea35);
+        
+    
+        var popup_e2fefc835b03a7641b029a4c6048e51b = L.popup({"maxWidth": 300, "minWidth": 250, "style": "width: 300px;"});
+
+        
+            
+                var html_481b1642751c539019520e1a19b66048 = $(`<div id="html_481b1642751c539019520e1a19b66048" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Jocelyn Vasquez<br><b>Parish:</b> St. Francis of Assisi, Frisco<br><b>Current Faith:</b> I’m still transitioning out of mission, but recently I’ve been having trouble staying consistent in prayer and not growing compacdnt<br><b>Faith Goals:</b> No room for complacency and discipline in the interior life<br><b>Activity Interests:</b> Join a Bible Study, Attend Young Adult Parish Events, Attend Sunday Mass, Attend Daily Mass, Adoration / Consistent Prayer Time, Regular Confession, Spiritual / Intellectual / Human Formation, Discipleship<br><b>Additional Notes:</b> Thanks for the survey! Hope the answers help :)</div>`)[0];
+                popup_e2fefc835b03a7641b029a4c6048e51b.setContent(html_481b1642751c539019520e1a19b66048);
+            
+        
+
+        marker_30f75686e433f9d334b81306e444516d.bindPopup(popup_e2fefc835b03a7641b029a4c6048e51b)
+        ;
+
+        
+    
+    
+            var marker_f880255f5ddba4ef826f2cde178f2c50 = L.marker(
+                [33.0198, -96.6989],
+                {}
+            ).addTo(marker_cluster_1ea4b7cabdb1869fe88f1bd284a76a96);
+        
+    
+            var icon_ba55dbdfafb751d224c3af5964189fa0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_f880255f5ddba4ef826f2cde178f2c50.setIcon(icon_ba55dbdfafb751d224c3af5964189fa0);
+        
+    
+        var popup_3787d51445cb854257b14f16e39fbdaa = L.popup({"maxWidth": 300, "minWidth": 250, "style": "width: 300px;"});
+
+        
+            
+                var html_b5b9cc14002a88708bebfa3b4af864f0 = $(`<div id="html_b5b9cc14002a88708bebfa3b4af864f0" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Marte Rodriguez<br><b>Parish:</b> St. Ann Parish and St. Francis of Assissi<br><b>Current Faith:</b> I think my faith is the strongest it has ever been. I read the gospels every day, and I enjoy learning about Jesus. I also pray a rosary every night before bed, and that gives me a lot of peace. I miss going to daily mass, but I try to go to perpetual adoration at St. Ann’s as much as I can. I am actually thinking about moving closer to Coppell/Carrolton, so I can go every day, and I am looking forward to that. <br><b>Faith Goals:</b> I feel like my faith is growing very strong every day, but all the things I mentioned I do alone. I love talking about Jesus or the books I’ve read, so I think talking with others about God would be great. I think maybe also doing something where I help those in need would be very good. <br><b>Activity Interests:</b> Join a Bible Study, Attend Young Adult Parish Events, Serve Local Community, Attend Daily Mass, Adoration / Consistent Prayer Time, Regular Confession<br><b>Additional Notes:</b> nan</div>`)[0];
+                popup_3787d51445cb854257b14f16e39fbdaa.setContent(html_b5b9cc14002a88708bebfa3b4af864f0);
+            
+        
+
+        marker_f880255f5ddba4ef826f2cde178f2c50.bindPopup(popup_3787d51445cb854257b14f16e39fbdaa)
+        ;
+
+        
+    
+    
+            var marker_a65e1404bd2f16f4d725ce840f8fd7e4 = L.marker(
+                [33.0198, -96.6989],
+                {}
+            ).addTo(marker_cluster_1ea4b7cabdb1869fe88f1bd284a76a96);
+        
+    
+            var icon_cd59b9cf70af83414e844570028908fc = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_a65e1404bd2f16f4d725ce840f8fd7e4.setIcon(icon_cd59b9cf70af83414e844570028908fc);
+        
+    
+        var popup_a3922c01692ecaeea2d7feaba07aef11 = L.popup({"maxWidth": 300, "minWidth": 250, "style": "width: 300px;"});
+
+        
+            
+                var html_760af91a8a245aa38acdf5cc33f22ac7 = $(`<div id="html_760af91a8a245aa38acdf5cc33f22ac7" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Evan  Florance<br><b>Parish:</b> St. Francis of Assisi- Frisco <br><b>Current Faith:</b> Going to weekly YA events, growing in faith in various communities such as ACTS, praying the rosary and intentions for people<br><b>Faith Goals:</b> Praying more and serving the communities around Dallas more<br><b>Activity Interests:</b> Join a Bible Study, Attend Young Adult Parish Events, Serve Local Community, Attend Daily Mass, Adoration / Consistent Prayer Time, Spiritual / Intellectual / Human Formation<br><b>Additional Notes:</b> I am still not really sure what an upper room thing is but I am interested in attending one to find out haha</div>`)[0];
+                popup_a3922c01692ecaeea2d7feaba07aef11.setContent(html_760af91a8a245aa38acdf5cc33f22ac7);
+            
+        
+
+        marker_a65e1404bd2f16f4d725ce840f8fd7e4.bindPopup(popup_a3922c01692ecaeea2d7feaba07aef11)
+        ;
+
+        
+    
+    
+            var marker_e1d605baf4131a792dfb4b3fd7301336 = L.marker(
+                [32.8583, -96.7626],
+                {}
+            ).addTo(marker_cluster_1ea4b7cabdb1869fe88f1bd284a76a96);
+        
+    
+            var icon_31a3c5c5650cb30046f5769327f023f2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "gray", "prefix": "glyphicon"}
+            );
+            marker_e1d605baf4131a792dfb4b3fd7301336.setIcon(icon_31a3c5c5650cb30046f5769327f023f2);
+        
+    
+        var popup_d2864acee3c7bc8618c25a126d52198e = L.popup({"maxWidth": 300, "minWidth": 250, "style": "width: 300px;"});
+
+        
+            
+                var html_7969d32e352fae4b6b416388f3b87a27 = $(`<div id="html_7969d32e352fae4b6b416388f3b87a27" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Sarah O’Connor<br><b>Parish:</b> CTK and St Anns<br><b>Current Faith:</b> nan<br><b>Faith Goals:</b> nan<br><b>Activity Interests:</b> Attend Young Adult Parish Events, Spiritual / Intellectual / Human Formation<br><b>Additional Notes:</b> nan</div>`)[0];
+                popup_d2864acee3c7bc8618c25a126d52198e.setContent(html_7969d32e352fae4b6b416388f3b87a27);
+            
+        
+
+        marker_e1d605baf4131a792dfb4b3fd7301336.bindPopup(popup_d2864acee3c7bc8618c25a126d52198e)
+        ;
+
+        
+    
+    
+            var marker_70f1f91262a11b6027c7054606e84811 = L.marker(
+                [33.1507, -96.8236],
+                {}
+            ).addTo(marker_cluster_1ea4b7cabdb1869fe88f1bd284a76a96);
+        
+    
+            var icon_7c3b37950bb0f74eedabf5378a85b8cf = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "pink", "prefix": "glyphicon"}
+            );
+            marker_70f1f91262a11b6027c7054606e84811.setIcon(icon_7c3b37950bb0f74eedabf5378a85b8cf);
+        
+    
+        var popup_7d87cb74675da67bf2387385a906fbc1 = L.popup({"maxWidth": 300, "minWidth": 250, "style": "width: 300px;"});
+
+        
+            
+                var html_6629861b970d734e3477fee89d551dc0 = $(`<div id="html_6629861b970d734e3477fee89d551dc0" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Patricia Valderrama<br><b>Parish:</b> St Francis of Assisi<br><b>Current Faith:</b> Daily prayer, regular Confession, I lead a bible study of girls but am looking to grow by being discipled by someone else and also beginning spiritual direction. I also work at Blessed Is She so I get a lot of my formation through my work in Catholic ministry<br><b>Faith Goals:</b> Getting better at sitting there in silence during prayer as opposed to always having to journal<br><b>Activity Interests:</b> Attend Young Adult Parish Events, Spiritual / Intellectual / Human Formation, Discipleship<br><b>Additional Notes:</b> Thank you for this!! This is amazing!</div>`)[0];
+                popup_7d87cb74675da67bf2387385a906fbc1.setContent(html_6629861b970d734e3477fee89d551dc0);
+            
+        
+
+        marker_70f1f91262a11b6027c7054606e84811.bindPopup(popup_7d87cb74675da67bf2387385a906fbc1)
+        ;
+
+        
+    
+    
+            var marker_dda71d32d12a7231d2c294a650f9836c = L.marker(
+                [32.9618, -96.8292],
+                {}
+            ).addTo(marker_cluster_1ea4b7cabdb1869fe88f1bd284a76a96);
+        
+    
+            var icon_0cdbc444fefaa163d8439479fa71675a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "gray", "prefix": "glyphicon"}
+            );
+            marker_dda71d32d12a7231d2c294a650f9836c.setIcon(icon_0cdbc444fefaa163d8439479fa71675a);
+        
+    
+        var popup_00e4c1d4c13af3eebeb2002d50459db5 = L.popup({"maxWidth": 300, "minWidth": 250, "style": "width: 300px;"});
+
+        
+            
+                var html_674dab2159e2269a660c13f61438ee08 = $(`<div id="html_674dab2159e2269a660c13f61438ee08" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Rachel Fatheree<br><b>Parish:</b> TBD - recently moved to addison<br><b>Current Faith:</b> I go to mass and confession regularly and attend a Bible study but my faith life could improve! <br><b>Faith Goals:</b> Build more community <br><b>Activity Interests:</b> Attend Young Adult Parish Events, Serve Local Community, Attend Sunday Mass, Attend Daily Mass, Adoration / Consistent Prayer Time, Regular Confession, Spiritual / Intellectual / Human Formation, Discipleship<br><b>Additional Notes:</b> nan</div>`)[0];
+                popup_00e4c1d4c13af3eebeb2002d50459db5.setContent(html_674dab2159e2269a660c13f61438ee08);
+            
+        
+
+        marker_dda71d32d12a7231d2c294a650f9836c.bindPopup(popup_00e4c1d4c13af3eebeb2002d50459db5)
+        ;
+
+        
+    
+    
+            var marker_a4b7542d2c28ec8fcc20004b86ae6f05 = L.marker(
+                [32.848152, -96.851349],
+                {}
+            ).addTo(marker_cluster_1ea4b7cabdb1869fe88f1bd284a76a96);
+        
+    
+            var icon_0cbd75443a4a67aeb31e99709a2ae585 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_a4b7542d2c28ec8fcc20004b86ae6f05.setIcon(icon_0cbd75443a4a67aeb31e99709a2ae585);
+        
+    
+        var popup_e29f74327233b67945b182516f223c2e = L.popup({"maxWidth": 300, "minWidth": 250, "style": "width: 300px;"});
+
+        
+            
+                var html_e7214e443e6b8bb3d2bb63453f37edae = $(`<div id="html_e7214e443e6b8bb3d2bb63453f37edae" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Joshua Davis<br><b>Parish:</b> Christ the King<br><b>Current Faith:</b> I am a Protestant who is currently in RCIA, this is going to be a long journey for me but I do hope to eventually become Catholic & anticipate that I will!<br><b>Faith Goals:</b> I want to grow in consistency in prayer and time in the word, this has always been a struggle for me. I also want to continue to grow as to what it looks like to lead my wife in marriage and the daughter that we have on the way who will be born in January!<br><b>Activity Interests:</b> Join a Bible Study, Serve Local Community, Attend Sunday Mass, Adoration / Consistent Prayer Time, Discipleship<br><b>Additional Notes:</b> nan</div>`)[0];
+                popup_e29f74327233b67945b182516f223c2e.setContent(html_e7214e443e6b8bb3d2bb63453f37edae);
+            
+        
+
+        marker_a4b7542d2c28ec8fcc20004b86ae6f05.bindPopup(popup_e29f74327233b67945b182516f223c2e)
+        ;
+
+        
+    
+    
+            var marker_646adcf386495330552c1be0094b8a62 = L.marker(
+                [32.8034, -96.7984],
+                {}
+            ).addTo(marker_cluster_1ea4b7cabdb1869fe88f1bd284a76a96);
+        
+    
+            var icon_05afc98949fd27b79e51f5ac92e5c12a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_646adcf386495330552c1be0094b8a62.setIcon(icon_05afc98949fd27b79e51f5ac92e5c12a);
+        
+    
+        var popup_d222dcfb3fc2fb16a8f2ae5a292fa333 = L.popup({"maxWidth": 300, "minWidth": 250, "style": "width: 300px;"});
+
+        
+            
+                var html_5befc24a19bd5e8918267b9f93423f67 = $(`<div id="html_5befc24a19bd5e8918267b9f93423f67" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Jacob Otto<br><b>Parish:</b> Holy Trinity / St. Thomas Aquinas<br><b>Current Faith:</b> Devout Catholic going to daily mass as much as I can<br><b>Faith Goals:</b> Having accountability to grow with other men my same age in faith, virtue, and vocation<br><b>Activity Interests:</b> Join a Bible Study, Serve Local Community, Adoration / Consistent Prayer Time, Spiritual / Intellectual / Human Formation<br><b>Additional Notes:</b> R.I.P to JP’s Bible study</div>`)[0];
+                popup_d222dcfb3fc2fb16a8f2ae5a292fa333.setContent(html_5befc24a19bd5e8918267b9f93423f67);
+            
+        
+
+        marker_646adcf386495330552c1be0094b8a62.bindPopup(popup_d222dcfb3fc2fb16a8f2ae5a292fa333)
+        ;
+
+        
+    
+    
+            var marker_bc3d0aa059ba9b2681b294ceba38f3aa = L.marker(
+                [32.814, -96.9489],
+                {}
+            ).addTo(marker_cluster_1ea4b7cabdb1869fe88f1bd284a76a96);
+        
+    
+            var icon_6b47b612f4a3d65f140716d679d987a9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
+            );
+            marker_bc3d0aa059ba9b2681b294ceba38f3aa.setIcon(icon_6b47b612f4a3d65f140716d679d987a9);
+        
+    
+        var popup_657c600e38563dfce21b3423ecba2235 = L.popup({"maxWidth": 300, "minWidth": 250, "style": "width: 300px;"});
+
+        
+            
+                var html_dcde735f639b21a087d224b98fa4f806 = $(`<div id="html_dcde735f639b21a087d224b98fa4f806" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Chad Leleux<br><b>Parish:</b> St Monica<br><b>Current Faith:</b> Mass, adoration, Homeless Ministry, St Monica<br><b>Faith Goals:</b> nan<br><b>Activity Interests:</b> Serve Local Community, Discipleship<br><b>Additional Notes:</b> nan</div>`)[0];
+                popup_657c600e38563dfce21b3423ecba2235.setContent(html_dcde735f639b21a087d224b98fa4f806);
+            
+        
+
+        marker_bc3d0aa059ba9b2681b294ceba38f3aa.bindPopup(popup_657c600e38563dfce21b3423ecba2235)
+        ;
+
+        
+    
+    
+            var marker_cd4dbb4c2b2fec63c231bcaa3adae3d3 = L.marker(
+                [32.8239, -96.768],
+                {}
+            ).addTo(marker_cluster_1ea4b7cabdb1869fe88f1bd284a76a96);
+        
+    
+            var icon_603daa9973ab55b74a3299199b6e2ff7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_cd4dbb4c2b2fec63c231bcaa3adae3d3.setIcon(icon_603daa9973ab55b74a3299199b6e2ff7);
+        
+    
+        var popup_b5a96008b84c2b02ac30268f85d21c1d = L.popup({"maxWidth": 300, "minWidth": 250, "style": "width: 300px;"});
+
+        
+            
+                var html_c124303c5fb86d2498cc8421fba76962 = $(`<div id="html_c124303c5fb86d2498cc8421fba76962" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Giancarlo Bernini<br><b>Parish:</b> nan<br><b>Current Faith:</b> nan<br><b>Faith Goals:</b> nan<br><b>Activity Interests:</b> Join a Bible Study, Attend Young Adult Parish Events, Attend Sunday Mass, Adoration / Consistent Prayer Time<br><b>Additional Notes:</b> nan</div>`)[0];
+                popup_b5a96008b84c2b02ac30268f85d21c1d.setContent(html_c124303c5fb86d2498cc8421fba76962);
+            
+        
+
+        marker_cd4dbb4c2b2fec63c231bcaa3adae3d3.bindPopup(popup_b5a96008b84c2b02ac30268f85d21c1d)
+        ;
+
+        
+    
+    
+            var marker_01e8fec50a6d16b6848aa496d86f64dc = L.marker(
+                [32.7473, -96.8304],
+                {}
+            ).addTo(marker_cluster_1ea4b7cabdb1869fe88f1bd284a76a96);
+        
+    
+            var icon_8986579cba818723a7ce03d3f1ade0fa = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_01e8fec50a6d16b6848aa496d86f64dc.setIcon(icon_8986579cba818723a7ce03d3f1ade0fa);
+        
+    
+        var popup_95f2ee4adc2f103d055ead4be76d3811 = L.popup({"maxWidth": 300, "minWidth": 250, "style": "width: 300px;"});
+
+        
+            
+                var html_e36993007c358a899b5b5bbd63d07041 = $(`<div id="html_e36993007c358a899b5b5bbd63d07041" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Samuel Tanner<br><b>Parish:</b> St.Cecilia or St.Thomas Aquinas<br><b>Current Faith:</b> Faith is my biggest priority, looking to have a group of men to meet with consistently. <br><b>Faith Goals:</b> I’d like to se deeper devotion to Mary and the Saints, as well as growth into the man I need to be for my wife and future family.<br><b>Activity Interests:</b> Join a Bible Study, Attend Young Adult Parish Events, Serve Local Community, Attend Sunday Mass, Attend Daily Mass, Adoration / Consistent Prayer Time, Regular Confession, Spiritual / Intellectual / Human Formation, Discipleship<br><b>Additional Notes:</b> nan</div>`)[0];
+                popup_95f2ee4adc2f103d055ead4be76d3811.setContent(html_e36993007c358a899b5b5bbd63d07041);
+            
+        
+
+        marker_01e8fec50a6d16b6848aa496d86f64dc.bindPopup(popup_95f2ee4adc2f103d055ead4be76d3811)
+        ;
+
+        
+    
+    
+            var marker_a874c00969acdee1fae6a2785f60891e = L.marker(
+                [32.8097, -96.803],
+                {}
+            ).addTo(marker_cluster_1ea4b7cabdb1869fe88f1bd284a76a96);
+        
+    
+            var icon_678b48bbb5a626675c0cfbda4fe2d510 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_a874c00969acdee1fae6a2785f60891e.setIcon(icon_678b48bbb5a626675c0cfbda4fe2d510);
+        
+    
+        var popup_dc84078152eacefcbf1e188ff430ac5c = L.popup({"maxWidth": 300, "minWidth": 250, "style": "width: 300px;"});
+
+        
+            
+                var html_747e0c445a3b3372e905645ea35dee2e = $(`<div id="html_747e0c445a3b3372e905645ea35dee2e" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Kyle Mistele<br><b>Parish:</b> Christ the King<br><b>Current Faith:</b> I go to Mass every Sunday, pray every day, go to Confession regularly and frequent adoration and Bible study (JP Nguyen’s Bible study which is now dissolved)<br><b>Faith Goals:</b> I’d really like to grow in a community <br><b>Activity Interests:</b> Join a Bible Study, Attend Young Adult Parish Events, Serve Local Community, Adoration / Consistent Prayer Time, Spiritual / Intellectual / Human Formation<br><b>Additional Notes:</b> nan</div>`)[0];
+                popup_dc84078152eacefcbf1e188ff430ac5c.setContent(html_747e0c445a3b3372e905645ea35dee2e);
+            
+        
+
+        marker_a874c00969acdee1fae6a2785f60891e.bindPopup(popup_dc84078152eacefcbf1e188ff430ac5c)
+        ;
+
+        
+    
+    
+            var marker_07c6a464a96805d3d0afe7a6316827eb = L.marker(
+                [32.9756, -96.89],
+                {}
+            ).addTo(marker_cluster_1ea4b7cabdb1869fe88f1bd284a76a96);
+        
+    
+            var icon_8cfec1be2620ae0bde776579446c6d70 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_07c6a464a96805d3d0afe7a6316827eb.setIcon(icon_8cfec1be2620ae0bde776579446c6d70);
+        
+    
+        var popup_9c14bfaf5a85becb20797197b5254729 = L.popup({"maxWidth": 300, "minWidth": 250, "style": "width: 300px;"});
+
+        
+            
+                var html_a69e0656c976e3dbea717eb6765b5e0a = $(`<div id="html_a69e0656c976e3dbea717eb6765b5e0a" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Parker Berthelot<br><b>Parish:</b> St. Ann’s in Coppell<br><b>Current Faith:</b> I’m a former missionary, so I still make a daily Hour Hour and try to make daily mass as I’m able!<br><b>Faith Goals:</b> I’d love to not just “have” a faith life by going to mass and praying daily, but take the next step and share that faith life with others. Both in evangelizing but also in fellowship with others so we can build each other up on the journey. I haven’t had this since mission!<br><b>Activity Interests:</b> Join a Bible Study, Lead a Bible Study, Serve Local Community, Spiritual / Intellectual / Human Formation, Discipleship<br><b>Additional Notes:</b> Hey! I just moved to Dallas a few months ago with my wife. She grew up here, so she has some friends in the area, but I’m starting from square one. I’ve been looking for opportunities get out there and form friendships. I went to the Bible Study at JP’s house twice at the invitation of David, but now that it’s dissolved I’m back at square one again! Half the battle of finding community is having connections, so I’m grateful for any guidance or connections this could provide! Happy to talk whenever. Thanks for offering this help!</div>`)[0];
+                popup_9c14bfaf5a85becb20797197b5254729.setContent(html_a69e0656c976e3dbea717eb6765b5e0a);
+            
+        
+
+        marker_07c6a464a96805d3d0afe7a6316827eb.bindPopup(popup_9c14bfaf5a85becb20797197b5254729)
+        ;
+
+        
+    
+    
+            var marker_467a68ea93a7c127484a6b604f5acf6a = L.marker(
+                [32.8874, -96.7173],
+                {}
+            ).addTo(marker_cluster_1ea4b7cabdb1869fe88f1bd284a76a96);
+        
+    
+            var icon_d705b6adab62a00b65671b97e2276742 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "lightblue", "prefix": "glyphicon"}
+            );
+            marker_467a68ea93a7c127484a6b604f5acf6a.setIcon(icon_d705b6adab62a00b65671b97e2276742);
+        
+    
+        var popup_8548331ba2d3fa94236ee676b62be387 = L.popup({"maxWidth": 300, "minWidth": 250, "style": "width: 300px;"});
+
+        
+            
+                var html_c1acd6bccd4fdaa3df6af44e7771dcd2 = $(`<div id="html_c1acd6bccd4fdaa3df6af44e7771dcd2" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Craig Koenig<br><b>Parish:</b> St. Thomas Aquinas & St. Patrick’s<br><b>Current Faith:</b> nan<br><b>Faith Goals:</b> nan<br><b>Activity Interests:</b> Lead a Bible Study, I currently lead a small group in Lake Highlands<br><b>Additional Notes:</b> Thanks for your support! Upper room events have been great and appreciate the facilitation of FOCUS-related connections</div>`)[0];
+                popup_8548331ba2d3fa94236ee676b62be387.setContent(html_c1acd6bccd4fdaa3df6af44e7771dcd2);
+            
+        
+
+        marker_467a68ea93a7c127484a6b604f5acf6a.bindPopup(popup_8548331ba2d3fa94236ee676b62be387)
+        ;
+
+        
+    
+    
+            var marker_5c32b3471d967d4660a464f5b37b5a42 = L.marker(
+                [32.9343, -97.0781],
+                {}
+            ).addTo(marker_cluster_1ea4b7cabdb1869fe88f1bd284a76a96);
+        
+    
+            var icon_ad1aefda3f652aa598f636c3496b6466 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "gray", "prefix": "glyphicon"}
+            );
+            marker_5c32b3471d967d4660a464f5b37b5a42.setIcon(icon_ad1aefda3f652aa598f636c3496b6466);
+        
+    
+        var popup_3e09d0e84dfc10a43d60f8516ff01469 = L.popup({"maxWidth": 300, "minWidth": 250, "style": "width: 300px;"});
+
+        
+            
+                var html_ac72f314ee0c2ce51de61076c6665e88 = $(`<div id="html_ac72f314ee0c2ce51de61076c6665e88" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Brittany Anderson<br><b>Parish:</b> St Francis Grapevine<br><b>Current Faith:</b> Mass 2x a week, daily prayer, monthly prayer nights with friends<br><b>Faith Goals:</b> More friends on mission<br><b>Activity Interests:</b> Attend Daily Mass, Spiritual / Intellectual / Human Formation, Discipleship<br><b>Additional Notes:</b> nan</div>`)[0];
+                popup_3e09d0e84dfc10a43d60f8516ff01469.setContent(html_ac72f314ee0c2ce51de61076c6665e88);
+            
+        
+
+        marker_5c32b3471d967d4660a464f5b37b5a42.bindPopup(popup_3e09d0e84dfc10a43d60f8516ff01469)
+        ;
+
+        
+    
+    
+            var marker_3496fed92f9abb02214834c121c46902 = L.marker(
+                [32.7993, -96.7765],
+                {}
+            ).addTo(marker_cluster_1ea4b7cabdb1869fe88f1bd284a76a96);
+        
+    
+            var icon_219800721a88c2bb27ff3f0c776c1c99 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_3496fed92f9abb02214834c121c46902.setIcon(icon_219800721a88c2bb27ff3f0c776c1c99);
+        
+    
+        var popup_cae838458905f931c1bbf9350486c0eb = L.popup({"maxWidth": 300, "minWidth": 250, "style": "width: 300px;"});
+
+        
+            
+                var html_12ad139a1484af2cc163ea098fb7a523 = $(`<div id="html_12ad139a1484af2cc163ea098fb7a523" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Terence Huffines<br><b>Parish:</b> St. Thomas Aquinas <br><b>Current Faith:</b> Strong to decent<br><b>Faith Goals:</b> More consistent prayer and more bible reading.<br><b>Activity Interests:</b> Join a Bible Study, Lead a Bible Study<br><b>Additional Notes:</b> nan</div>`)[0];
+                popup_cae838458905f931c1bbf9350486c0eb.setContent(html_12ad139a1484af2cc163ea098fb7a523);
+            
+        
+
+        marker_3496fed92f9abb02214834c121c46902.bindPopup(popup_cae838458905f931c1bbf9350486c0eb)
+        ;
+
+        
+    
+    
+            var marker_5cb203c5cb212b5d784ebf6f0495f3b5 = L.marker(
+                [32.814, -96.9489],
+                {}
+            ).addTo(marker_cluster_1ea4b7cabdb1869fe88f1bd284a76a96);
+        
+    
+            var icon_9ca606c837926d0dacb1dd5971fb661b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_5cb203c5cb212b5d784ebf6f0495f3b5.setIcon(icon_9ca606c837926d0dacb1dd5971fb661b);
+        
+    
+        var popup_cd8756fabeda7794f30ba8a6d4311c7d = L.popup({"maxWidth": 300, "minWidth": 250, "style": "width: 300px;"});
+
+        
+            
+                var html_f01bba3c49be502fb4c8bb9b0a5e5e2e = $(`<div id="html_f01bba3c49be502fb4c8bb9b0a5e5e2e" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Elizabeth Vu<br><b>Parish:</b> Church of the incarnation <br><b>Current Faith:</b> Short daily prayer, weekly mass, the occasional daily mass. <br><b>Faith Goals:</b> I would like a consistent Bible study and women’s community <br><b>Activity Interests:</b> Join a Bible Study, Attend Sunday Mass, Attend Daily Mass, Adoration / Consistent Prayer Time, Regular Confession, Spiritual / Intellectual / Human Formation, Discipleship<br><b>Additional Notes:</b> nan</div>`)[0];
+                popup_cd8756fabeda7794f30ba8a6d4311c7d.setContent(html_f01bba3c49be502fb4c8bb9b0a5e5e2e);
+            
+        
+
+        marker_5cb203c5cb212b5d784ebf6f0495f3b5.bindPopup(popup_cd8756fabeda7794f30ba8a6d4311c7d)
+        ;
+
+        
+    
+    
+            var marker_aa11ce26989a108a5a8ad7bd440d6b79 = L.marker(
+                [32.8034, -96.7984],
+                {}
+            ).addTo(marker_cluster_1ea4b7cabdb1869fe88f1bd284a76a96);
+        
+    
+            var icon_7b71eab4944261911fe4fc57c1613279 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_aa11ce26989a108a5a8ad7bd440d6b79.setIcon(icon_7b71eab4944261911fe4fc57c1613279);
+        
+    
+        var popup_9cf4348323727343ea4b9da795a89b1a = L.popup({"maxWidth": 300, "minWidth": 250, "style": "width: 300px;"});
+
+        
+            
+                var html_059165c51c43ecb19a98ff463fd407d5 = $(`<div id="html_059165c51c43ecb19a98ff463fd407d5" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Frank Herbolsheimer<br><b>Parish:</b> Holy Trinity<br><b>Current Faith:</b> I attended mass every Sunday and try to pray every day. <br><b>Faith Goals:</b> I would like to make my faith more of a priority. I haven’t really stepped out of my box to meet other people in my parish but would like to. <br><b>Activity Interests:</b> Join a Bible Study, Attend Young Adult Parish Events, Serve Local Community<br><b>Additional Notes:</b> nan</div>`)[0];
+                popup_9cf4348323727343ea4b9da795a89b1a.setContent(html_059165c51c43ecb19a98ff463fd407d5);
+            
+        
+
+        marker_aa11ce26989a108a5a8ad7bd440d6b79.bindPopup(popup_9cf4348323727343ea4b9da795a89b1a)
+        ;
+
+        
+    
+    
+            var marker_437f943ee83b8b3f9a20f70c27804147 = L.marker(
+                [32.8239, -96.768],
+                {}
+            ).addTo(marker_cluster_1ea4b7cabdb1869fe88f1bd284a76a96);
+        
+    
+            var icon_11d3a357d5bd9417669ecd9547f3b8f3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_437f943ee83b8b3f9a20f70c27804147.setIcon(icon_11d3a357d5bd9417669ecd9547f3b8f3);
+        
+    
+        var popup_b3fee94135ca08dadd8b11428b03291a = L.popup({"maxWidth": 300, "minWidth": 250, "style": "width: 300px;"});
+
+        
+            
+                var html_eb9a76d86fb18d1f1d45d84d8e578b02 = $(`<div id="html_eb9a76d86fb18d1f1d45d84d8e578b02" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Russell Huffines<br><b>Parish:</b> Christ the King<br><b>Current Faith:</b> Practicing and needing more <br><b>Faith Goals:</b> nan<br><b>Activity Interests:</b> Join a Bible Study, Lead a Bible Study, Attend Young Adult Parish Events, Attend Sunday Mass, Attend Daily Mass, Adoration / Consistent Prayer Time, Regular Confession, Spiritual / Intellectual / Human Formation<br><b>Additional Notes:</b> nan</div>`)[0];
+                popup_b3fee94135ca08dadd8b11428b03291a.setContent(html_eb9a76d86fb18d1f1d45d84d8e578b02);
+            
+        
+
+        marker_437f943ee83b8b3f9a20f70c27804147.bindPopup(popup_b3fee94135ca08dadd8b11428b03291a)
+        ;
+
+        
+    
+    
+            var marker_d159fe676aa22c76005801e61d3baa0f = L.marker(
+                [32.6518, -96.9083],
+                {}
+            ).addTo(marker_cluster_1ea4b7cabdb1869fe88f1bd284a76a96);
+        
+    
+            var icon_222b6343135f8f8d58c9a92effe2aad1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "gray", "prefix": "glyphicon"}
+            );
+            marker_d159fe676aa22c76005801e61d3baa0f.setIcon(icon_222b6343135f8f8d58c9a92effe2aad1);
+        
+    
+        var popup_d8e2015fc7966d737f440a08408d5360 = L.popup({"maxWidth": 300, "minWidth": 250, "style": "width: 300px;"});
+
+        
+            
+                var html_34ba2870423cac1e7a1d63ec6832c784 = $(`<div id="html_34ba2870423cac1e7a1d63ec6832c784" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Marisa Nieto<br><b>Parish:</b> Holy Spirit in Duncanville<br><b>Current Faith:</b> Currently a Focus Missionary at University of Georgia<br><b>Faith Goals:</b> Looking for young Catholics south of dallas<br><b>Activity Interests:</b> Attend Young Adult Parish Events, Attend Sunday Mass, Attend Daily Mass<br><b>Additional Notes:</b> Could be avaliable during the summer if you want to reach out then!</div>`)[0];
+                popup_d8e2015fc7966d737f440a08408d5360.setContent(html_34ba2870423cac1e7a1d63ec6832c784);
+            
+        
+
+        marker_d159fe676aa22c76005801e61d3baa0f.bindPopup(popup_d8e2015fc7966d737f440a08408d5360)
+        ;
+
+        
+    
+    
+            var marker_7f3ac68e7cada4c789ebf0fbb25067ec = L.marker(
+                [32.9546, -97.015],
+                {}
+            ).addTo(marker_cluster_1ea4b7cabdb1869fe88f1bd284a76a96);
+        
+    
+            var icon_57f72005c7576d594df3286c301b1121 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "gray", "prefix": "glyphicon"}
+            );
+            marker_7f3ac68e7cada4c789ebf0fbb25067ec.setIcon(icon_57f72005c7576d594df3286c301b1121);
+        
+    
+        var popup_c4cb275c45281d8e2df9138f48b1c448 = L.popup({"maxWidth": 300, "minWidth": 250, "style": "width: 300px;"});
+
+        
+            
+                var html_248b688f2383a7d107487f63ba948eb1 = $(`<div id="html_248b688f2383a7d107487f63ba948eb1" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Ale  Taliente<br><b>Parish:</b> St. Ann<br><b>Current Faith:</b> It’s a top priority and incorporated in my daily life. But I also have my moments of desolation and just putting God in the back of my mind. <br><b>Faith Goals:</b> I want to be more consistent in spending longer time with Him in prayer. <br><b>Activity Interests:</b> Adoration / Consistent Prayer Time, Spiritual / Intellectual / Human Formation, Discipleship<br><b>Additional Notes:</b> nan</div>`)[0];
+                popup_c4cb275c45281d8e2df9138f48b1c448.setContent(html_248b688f2383a7d107487f63ba948eb1);
+            
+        
+
+        marker_7f3ac68e7cada4c789ebf0fbb25067ec.bindPopup(popup_c4cb275c45281d8e2df9138f48b1c448)
+        ;
+
+        
+    
+    
+            var marker_9ac2750e9d371433a1724e9728c398bf = L.marker(
+                [32.7555, -97.3308],
+                {}
+            ).addTo(marker_cluster_1ea4b7cabdb1869fe88f1bd284a76a96);
+        
+    
+            var icon_f510703abd94e42fa8bd1505a353568d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_9ac2750e9d371433a1724e9728c398bf.setIcon(icon_f510703abd94e42fa8bd1505a353568d);
+        
+    
+        var popup_a13ebb2a4a446a7d02764ad454c2032c = L.popup({"maxWidth": 300, "minWidth": 250, "style": "width: 300px;"});
+
+        
+            
+                var html_17359162b26ffba153bd831177bf9f7e = $(`<div id="html_17359162b26ffba153bd831177bf9f7e" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Jacob Flores<br><b>Parish:</b> Holy Redeemer Aledo<br><b>Current Faith:</b> Pray as a family and go to mass on Sundays <br><b>Faith Goals:</b> More consistent community and sacraments <br><b>Activity Interests:</b> Join a Bible Study, Attend Young Adult Parish Events, Adoration / Consistent Prayer Time, Regular Confession<br><b>Additional Notes:</b> Thanks for leading this. I think it’s a great idea! </div>`)[0];
+                popup_a13ebb2a4a446a7d02764ad454c2032c.setContent(html_17359162b26ffba153bd831177bf9f7e);
+            
+        
+
+        marker_9ac2750e9d371433a1724e9728c398bf.bindPopup(popup_a13ebb2a4a446a7d02764ad454c2032c)
+        ;
+
+        
+    
+    
+            var marker_25cdd08c6809b4990ff9651c417cdddc = L.marker(
+                [32.8874, -96.7173],
+                {}
+            ).addTo(marker_cluster_1ea4b7cabdb1869fe88f1bd284a76a96);
+        
+    
+            var icon_8b2fd3e17389104812e3416436557571 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "gray", "prefix": "glyphicon"}
+            );
+            marker_25cdd08c6809b4990ff9651c417cdddc.setIcon(icon_8b2fd3e17389104812e3416436557571);
+        
+    
+        var popup_085c76d0a1096435527ae62be6dfa144 = L.popup({"maxWidth": 300, "minWidth": 250, "style": "width: 300px;"});
+
+        
+            
+                var html_3e7bf68e766135d56d717dcc94de0384 = $(`<div id="html_3e7bf68e766135d56d717dcc94de0384" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Elizabeth Koenig<br><b>Parish:</b> St. Thomas Aquinas<br><b>Current Faith:</b> Regular formation and apostolate through Opus Dei<br><b>Faith Goals:</b> nan<br><b>Activity Interests:</b> Spiritual / Intellectual / Human Formation<br><b>Additional Notes:</b> nan</div>`)[0];
+                popup_085c76d0a1096435527ae62be6dfa144.setContent(html_3e7bf68e766135d56d717dcc94de0384);
+            
+        
+
+        marker_25cdd08c6809b4990ff9651c417cdddc.bindPopup(popup_085c76d0a1096435527ae62be6dfa144)
+        ;
+
+        
+    
+    
+            var marker_67d608b7632a929d2ab0ed41857898f3 = L.marker(
+                [32.9621, -96.7864],
+                {}
+            ).addTo(marker_cluster_1ea4b7cabdb1869fe88f1bd284a76a96);
+        
+    
+            var icon_5194d9c906fb802877733491473106df = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_67d608b7632a929d2ab0ed41857898f3.setIcon(icon_5194d9c906fb802877733491473106df);
+        
+    
+        var popup_4fe46381744af0392e541d8e6de350b9 = L.popup({"maxWidth": 300, "minWidth": 250, "style": "width: 300px;"});
+
+        
+            
+                var html_5044853b30a10513dd9736ba2cb96a64 = $(`<div id="html_5044853b30a10513dd9736ba2cb96a64" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Joseph Naugle<br><b>Parish:</b> St. Thomas Aquinas<br><b>Current Faith:</b> nan<br><b>Faith Goals:</b> nan<br><b>Activity Interests:</b> Join a Bible Study, Attend Young Adult Parish Events, Serve Local Community, Attend Sunday Mass, Attend Daily Mass, Adoration / Consistent Prayer Time, Regular Confession, Spiritual / Intellectual / Human Formation<br><b>Additional Notes:</b> nan</div>`)[0];
+                popup_4fe46381744af0392e541d8e6de350b9.setContent(html_5044853b30a10513dd9736ba2cb96a64);
+            
+        
+
+        marker_67d608b7632a929d2ab0ed41857898f3.bindPopup(popup_4fe46381744af0392e541d8e6de350b9)
+        ;
+
+        
+    
+    
+            var marker_f4e11f7ebdc6c701e0d548bdd1405ac1 = L.marker(
+                [32.8466, -96.7871],
+                {}
+            ).addTo(marker_cluster_1ea4b7cabdb1869fe88f1bd284a76a96);
+        
+    
+            var icon_33a9a4f98bb4e21b33972f47c31774bb = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_f4e11f7ebdc6c701e0d548bdd1405ac1.setIcon(icon_33a9a4f98bb4e21b33972f47c31774bb);
+        
+    
+        var popup_475694653bab2313096816f546c6146a = L.popup({"maxWidth": 300, "minWidth": 250, "style": "width: 300px;"});
+
+        
+            
+                var html_307c27d3417afaf289b9732c0ce09936 = $(`<div id="html_307c27d3417afaf289b9732c0ce09936" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Camille Kraus<br><b>Parish:</b> STA<br><b>Current Faith:</b> nan<br><b>Faith Goals:</b> nan<br><b>Activity Interests:</b> Join a Bible Study, Serve Local Community<br><b>Additional Notes:</b> nan</div>`)[0];
+                popup_475694653bab2313096816f546c6146a.setContent(html_307c27d3417afaf289b9732c0ce09936);
+            
+        
+
+        marker_f4e11f7ebdc6c701e0d548bdd1405ac1.bindPopup(popup_475694653bab2313096816f546c6146a)
+        ;
+
+        
+    
+    
+            var marker_6258fe2ea2f76099ead6a1e5982d6b1c = L.marker(
+                [32.7912, -96.8096],
+                {}
+            ).addTo(marker_cluster_1ea4b7cabdb1869fe88f1bd284a76a96);
+        
+    
+            var icon_a3df6e564dfada473947a1e3ccd31c6d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_6258fe2ea2f76099ead6a1e5982d6b1c.setIcon(icon_a3df6e564dfada473947a1e3ccd31c6d);
+        
+    
+        var popup_9c1f28278a484665be0c659490ea0b4f = L.popup({"maxWidth": 300, "minWidth": 250, "style": "width: 300px;"});
+
+        
+            
+                var html_a546ebcf4e85322de804dd199ba2ecfe = $(`<div id="html_a546ebcf4e85322de804dd199ba2ecfe" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Dennis Cawley<br><b>Parish:</b> Holy Trinity<br><b>Current Faith:</b> nan<br><b>Faith Goals:</b> nan<br><b>Activity Interests:</b> Join a Bible Study, Attend Young Adult Parish Events, Serve Local Community<br><b>Additional Notes:</b> nan</div>`)[0];
+                popup_9c1f28278a484665be0c659490ea0b4f.setContent(html_a546ebcf4e85322de804dd199ba2ecfe);
+            
+        
+
+        marker_6258fe2ea2f76099ead6a1e5982d6b1c.bindPopup(popup_9c1f28278a484665be0c659490ea0b4f)
+        ;
+
+        
+    
+    
+            var marker_f06fc4acc849c82ee8fc00fdce529434 = L.marker(
+                [32.9265, -96.8961],
+                {}
+            ).addTo(marker_cluster_1ea4b7cabdb1869fe88f1bd284a76a96);
+        
+    
+            var icon_f2b9a489c1c78d207c960d26282b55c0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "gray", "prefix": "glyphicon"}
+            );
+            marker_f06fc4acc849c82ee8fc00fdce529434.setIcon(icon_f2b9a489c1c78d207c960d26282b55c0);
+        
+    
+        var popup_8ac74517218613f4e91c1861e81c2f9e = L.popup({"maxWidth": 300, "minWidth": 250, "style": "width: 300px;"});
+
+        
+            
+                var html_adf4f0fb662a62c8da18f3c16e2b461c = $(`<div id="html_adf4f0fb662a62c8da18f3c16e2b461c" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Anna Ramage<br><b>Parish:</b> Mary Immaculate<br><b>Current Faith:</b> Daily prayer, weekly mass, weekly bible study group, confession<br><b>Faith Goals:</b> More prayer with the Holy Spirit<br><b>Activity Interests:</b> Attend Young Adult Parish Events, Serve Local Community<br><b>Additional Notes:</b> nan</div>`)[0];
+                popup_8ac74517218613f4e91c1861e81c2f9e.setContent(html_adf4f0fb662a62c8da18f3c16e2b461c);
+            
+        
+
+        marker_f06fc4acc849c82ee8fc00fdce529434.bindPopup(popup_8ac74517218613f4e91c1861e81c2f9e)
+        ;
+
+        
+    
+    
+            var marker_4238ef9057c4a617e49fd80cfcdf92cd = L.marker(
+                [32.9621, -96.7864],
+                {}
+            ).addTo(marker_cluster_1ea4b7cabdb1869fe88f1bd284a76a96);
+        
+    
+            var icon_c6863a8c0c11109ab994c66e0226fce4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_4238ef9057c4a617e49fd80cfcdf92cd.setIcon(icon_c6863a8c0c11109ab994c66e0226fce4);
+        
+    
+        var popup_a39e0457650ef241332e98bced632117 = L.popup({"maxWidth": 300, "minWidth": 250, "style": "width: 300px;"});
+
+        
+            
+                var html_1db2ef6dd6628c0e9baa3a8957896f1e = $(`<div id="html_1db2ef6dd6628c0e9baa3a8957896f1e" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Nick Blair<br><b>Parish:</b> St. Paul the Apostle<br><b>Current Faith:</b> Make it to mass once a week, confession every couple weeks<br><b>Faith Goals:</b> More consistent discipleship/mentorship, more consistent community to share questions and challenges of faith with<br><b>Activity Interests:</b> Join a Bible Study, Lead a Bible Study, Spiritual / Intellectual / Human Formation, Discipleship<br><b>Additional Notes:</b> nan</div>`)[0];
+                popup_a39e0457650ef241332e98bced632117.setContent(html_1db2ef6dd6628c0e9baa3a8957896f1e);
+            
+        
+
+        marker_4238ef9057c4a617e49fd80cfcdf92cd.bindPopup(popup_a39e0457650ef241332e98bced632117)
+        ;
+
+        
+    
+    
+            var marker_7121dbfc5e6337d7e4830774dde99419 = L.marker(
+                [32.9126, -96.6389],
+                {}
+            ).addTo(marker_cluster_1ea4b7cabdb1869fe88f1bd284a76a96);
+        
+    
+            var icon_0adf6ea8928bcc0b52a8629562612e25 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "yellow", "prefix": "glyphicon"}
+            );
+            marker_7121dbfc5e6337d7e4830774dde99419.setIcon(icon_0adf6ea8928bcc0b52a8629562612e25);
+        
+    
+        var popup_739e70f093c64851c27fb8af4d028729 = L.popup({"maxWidth": 300, "minWidth": 250, "style": "width: 300px;"});
+
+        
+            
+                var html_3796e60d54a6a160c2703a3fa998b98e = $(`<div id="html_3796e60d54a6a160c2703a3fa998b98e" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Zofia Dang<br><b>Parish:</b> Mother of Perpetual Help Parish<br><b>Current Faith:</b> nan<br><b>Faith Goals:</b> nan<br><b>Activity Interests:</b> Join a Bible Study, Lead a Bible Study, Attend Young Adult Parish Events, Attend Sunday Mass, Attend Daily Mass, Adoration / Consistent Prayer Time, Spiritual / Intellectual / Human Formation<br><b>Additional Notes:</b> nan</div>`)[0];
+                popup_739e70f093c64851c27fb8af4d028729.setContent(html_3796e60d54a6a160c2703a3fa998b98e);
+            
+        
+
+        marker_7121dbfc5e6337d7e4830774dde99419.bindPopup(popup_739e70f093c64851c27fb8af4d028729)
+        ;
+
+        
+    
+    
+            var marker_3a89b68d9de2d82f26587a31aa5bba66 = L.marker(
+                [33.1032, -96.6706],
+                {}
+            ).addTo(marker_cluster_1ea4b7cabdb1869fe88f1bd284a76a96);
+        
+    
+            var icon_a6b299548d5d041d5ba33d10d6baa096 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_3a89b68d9de2d82f26587a31aa5bba66.setIcon(icon_a6b299548d5d041d5ba33d10d6baa096);
+        
+    
+        var popup_7ea860fad76ee9876824769c08caabc8 = L.popup({"maxWidth": 300, "minWidth": 250, "style": "width: 300px;"});
+
+        
+            
+                var html_364fa57b5de0247e0a3579e62aef3506 = $(`<div id="html_364fa57b5de0247e0a3579e62aef3506" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Suzanne Teson<br><b>Parish:</b> St. Jude - Allen<br><b>Current Faith:</b> nan<br><b>Faith Goals:</b> nan<br><b>Activity Interests:</b> Join a Bible Study<br><b>Additional Notes:</b> nan</div>`)[0];
+                popup_7ea860fad76ee9876824769c08caabc8.setContent(html_364fa57b5de0247e0a3579e62aef3506);
+            
+        
+
+        marker_3a89b68d9de2d82f26587a31aa5bba66.bindPopup(popup_7ea860fad76ee9876824769c08caabc8)
+        ;
+
+        
+    
+    
+            var marker_75f3d9650b2bb278fd6b2a45d95c67ec = L.marker(
+                [32.9343, -97.0781],
+                {}
+            ).addTo(marker_cluster_1ea4b7cabdb1869fe88f1bd284a76a96);
+        
+    
+            var icon_562bb705a63e7ae2655c71088d126ec0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_75f3d9650b2bb278fd6b2a45d95c67ec.setIcon(icon_562bb705a63e7ae2655c71088d126ec0);
+        
+    
+        var popup_8d933c31c6ca73c9502e58409d462e53 = L.popup({"maxWidth": 300, "minWidth": 250, "style": "width: 300px;"});
+
+        
+            
+                var html_027b1cf19d1ba05c2119d9920f0bfa84 = $(`<div id="html_027b1cf19d1ba05c2119d9920f0bfa84" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Catherine  Klauck<br><b>Parish:</b> St Ann’s Coppell<br><b>Current Faith:</b> I go to regular adoration, mass and confession<br><b>Faith Goals:</b> I’d like to grow in catholic community in the Dallas area<br><b>Activity Interests:</b> Join a Bible Study, Attend Young Adult Parish Events, Attend Sunday Mass, Attend Daily Mass, Adoration / Consistent Prayer Time, Regular Confession, Spiritual / Intellectual / Human Formation<br><b>Additional Notes:</b> nan</div>`)[0];
+                popup_8d933c31c6ca73c9502e58409d462e53.setContent(html_027b1cf19d1ba05c2119d9920f0bfa84);
+            
+        
+
+        marker_75f3d9650b2bb278fd6b2a45d95c67ec.bindPopup(popup_8d933c31c6ca73c9502e58409d462e53)
+        ;
+
+        
+    
+    
+            var marker_0d4040816c1067da0fc11eb7808eaf8b = L.marker(
+                [33.0146, -97.097],
+                {}
+            ).addTo(marker_cluster_1ea4b7cabdb1869fe88f1bd284a76a96);
+        
+    
+            var icon_fcd3f5c4751c06165664366936cd29c6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "pink", "prefix": "glyphicon"}
+            );
+            marker_0d4040816c1067da0fc11eb7808eaf8b.setIcon(icon_fcd3f5c4751c06165664366936cd29c6);
+        
+    
+        var popup_d9ea2993ae65731fc578d75c95f4456a = L.popup({"maxWidth": 300, "minWidth": 250, "style": "width: 300px;"});
+
+        
+            
+                var html_b00e9c8215b5b8cf29f177953222bc7d = $(`<div id="html_b00e9c8215b5b8cf29f177953222bc7d" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Camille Kelly<br><b>Parish:</b> St. Philip's<br><b>Current Faith:</b> nan<br><b>Faith Goals:</b> nan<br><b>Activity Interests:</b> Attend Young Adult Parish Events<br><b>Additional Notes:</b> nan</div>`)[0];
+                popup_d9ea2993ae65731fc578d75c95f4456a.setContent(html_b00e9c8215b5b8cf29f177953222bc7d);
+            
+        
+
+        marker_0d4040816c1067da0fc11eb7808eaf8b.bindPopup(popup_d9ea2993ae65731fc578d75c95f4456a)
+        ;
+
+        
+    
+    
+            var marker_24574e1775d62c17adce8de2395f5c3a = L.marker(
+                [32.8801, -96.8139],
+                {}
+            ).addTo(marker_cluster_1ea4b7cabdb1869fe88f1bd284a76a96);
+        
+    
+            var icon_d1dcfcf074ccd05b8ec001c194ebae41 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "gray", "prefix": "glyphicon"}
+            );
+            marker_24574e1775d62c17adce8de2395f5c3a.setIcon(icon_d1dcfcf074ccd05b8ec001c194ebae41);
+        
+    
+        var popup_a858f15900fc617fabbd9862acf19931 = L.popup({"maxWidth": 300, "minWidth": 250, "style": "width: 300px;"});
+
+        
+            
+                var html_9f2663ecc28c287bf26cf7038f4d50a3 = $(`<div id="html_9f2663ecc28c287bf26cf7038f4d50a3" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Isabel  Alessio<br><b>Parish:</b> St. Monica <br><b>Current Faith:</b> Practicing <br><b>Faith Goals:</b> Accompaniment at my parish <br><b>Activity Interests:</b> Spiritual / Intellectual / Human Formation<br><b>Additional Notes:</b> Hello friends! I’m mainly curious to hear y’all’s thoughts on how this part of YA / transition out of college fits with entering into parish life. I have my own thoughts and want to hear more of focus’ ideas on this. Hesitant to commit to anything here bc I want to commit at my parish and most of my  “win” is happening there! </div>`)[0];
+                popup_a858f15900fc617fabbd9862acf19931.setContent(html_9f2663ecc28c287bf26cf7038f4d50a3);
+            
+        
+
+        marker_24574e1775d62c17adce8de2395f5c3a.bindPopup(popup_a858f15900fc617fabbd9862acf19931)
+        ;
+
+        
+    
+    
+            var marker_421dbf026821a04e0fabe4fb1bd97558 = L.marker(
+                [32.8466, -96.7871],
+                {}
+            ).addTo(marker_cluster_1ea4b7cabdb1869fe88f1bd284a76a96);
+        
+    
+            var icon_ca42445aefc1b8adcc6e8408e2dfb806 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "yellow", "prefix": "glyphicon"}
+            );
+            marker_421dbf026821a04e0fabe4fb1bd97558.setIcon(icon_ca42445aefc1b8adcc6e8408e2dfb806);
+        
+    
+        var popup_59ba63975e29eac46db965808da3db72 = L.popup({"maxWidth": 300, "minWidth": 250, "style": "width: 300px;"});
+
+        
+            
+                var html_ec46fc20741017f133f2ab6d922672d4 = $(`<div id="html_ec46fc20741017f133f2ab6d922672d4" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Megan Lastra-Cruz<br><b>Parish:</b> St. Thomas Aquinas<br><b>Current Faith:</b> I currently go to Sunday Mass and daily Mass once a week. I pray in the mornings when I wake up and on my way to work. <br><b>Faith Goals:</b> I would love to be more involved in a Catholic community. I would like to be in a Bible study and get to know other Catholic women <br><b>Activity Interests:</b> Join a Bible Study, Lead a Bible Study, Attend Young Adult Parish Events, Serve Local Community, Spiritual / Intellectual / Human Formation, Discipleship<br><b>Additional Notes:</b> nan</div>`)[0];
+                popup_59ba63975e29eac46db965808da3db72.setContent(html_ec46fc20741017f133f2ab6d922672d4);
+            
+        
+
+        marker_421dbf026821a04e0fabe4fb1bd97558.bindPopup(popup_59ba63975e29eac46db965808da3db72)
+        ;
+
+        
+    
+    
+            var marker_5aeaabf0cda6f136f01d8871a5dd6bcc = L.marker(
+                [32.8239, -96.768],
+                {}
+            ).addTo(marker_cluster_1ea4b7cabdb1869fe88f1bd284a76a96);
+        
+    
+            var icon_03a873d32a54179f09d0f2c4b08f5bf1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "gray", "prefix": "glyphicon"}
+            );
+            marker_5aeaabf0cda6f136f01d8871a5dd6bcc.setIcon(icon_03a873d32a54179f09d0f2c4b08f5bf1);
+        
+    
+        var popup_a9cb462aac177aef1b94160be7e6a1aa = L.popup({"maxWidth": 300, "minWidth": 250, "style": "width: 300px;"});
+
+        
+            
+                var html_2ce62c83ef218bd4dd11612cffa711f2 = $(`<div id="html_2ce62c83ef218bd4dd11612cffa711f2" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Riley Geran<br><b>Parish:</b> Holy Trinity<br><b>Current Faith:</b> Attend Sunday church regularly, I am in a Bible study, attend a few young adult Catholic events<br><b>Faith Goals:</b> I feel like I could use the most work in my personal prayer life so looking for guides to help me stay true to that and keep me accountable<br><b>Activity Interests:</b> Attend Young Adult Parish Events, Serve Local Community, Attend Sunday Mass, Adoration / Consistent Prayer Time, Regular Confession, Spiritual / Intellectual / Human Formation, Discipleship<br><b>Additional Notes:</b> nan</div>`)[0];
+                popup_a9cb462aac177aef1b94160be7e6a1aa.setContent(html_2ce62c83ef218bd4dd11612cffa711f2);
+            
+        
+
+        marker_5aeaabf0cda6f136f01d8871a5dd6bcc.bindPopup(popup_a9cb462aac177aef1b94160be7e6a1aa)
+        ;
+
+        
+    
+    
+            var marker_ce90c14d14ab9e0ea8dd5f23322bf646 = L.marker(
+                [33.0146, -97.097],
+                {}
+            ).addTo(marker_cluster_1ea4b7cabdb1869fe88f1bd284a76a96);
+        
+    
+            var icon_822ee91f8692a7bd12a7b635d2724360 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "yellow", "prefix": "glyphicon"}
+            );
+            marker_ce90c14d14ab9e0ea8dd5f23322bf646.setIcon(icon_822ee91f8692a7bd12a7b635d2724360);
+        
+    
+        var popup_af9648a9e1fafa8abc4890fd1e9251ff = L.popup({"maxWidth": 300, "minWidth": 250, "style": "width: 300px;"});
+
+        
+            
+                var html_1686858baf8ad6d334834a6dbf2cf56b = $(`<div id="html_1686858baf8ad6d334834a6dbf2cf56b" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Jordan Storch<br><b>Parish:</b> St. Ann<br><b>Current Faith:</b> Deep faith in God - desire to make more time to serve him <br><b>Faith Goals:</b> Deeper - would love to have regular formation and lead others more frequently <br><b>Activity Interests:</b> Lead a Bible Study, Serve Local Community, Attend Daily Mass, Spiritual / Intellectual / Human Formation, Discipleship<br><b>Additional Notes:</b> nan</div>`)[0];
+                popup_af9648a9e1fafa8abc4890fd1e9251ff.setContent(html_1686858baf8ad6d334834a6dbf2cf56b);
+            
+        
+
+        marker_ce90c14d14ab9e0ea8dd5f23322bf646.bindPopup(popup_af9648a9e1fafa8abc4890fd1e9251ff)
+        ;
+
+        
+    
+    
+            var marker_ee1963e89be92171685a7e99bb0b00af = L.marker(
+                [32.8034, -96.7984],
+                {}
+            ).addTo(marker_cluster_1ea4b7cabdb1869fe88f1bd284a76a96);
+        
+    
+            var icon_c576e00f3b7d19aacf9a2e06d3082026 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_ee1963e89be92171685a7e99bb0b00af.setIcon(icon_c576e00f3b7d19aacf9a2e06d3082026);
+        
+    
+        var popup_24b59392819623492a049a8deccc12df = L.popup({"maxWidth": 300, "minWidth": 250, "style": "width: 300px;"});
+
+        
+            
+                var html_79e6aa2ed24d2a5c1b9c51d69b07e722 = $(`<div id="html_79e6aa2ed24d2a5c1b9c51d69b07e722" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Isabel Finkbeiner<br><b>Parish:</b> CTK<br><b>Current Faith:</b> I’m in 2 bible studies and attend young adult events infrequently <br><b>Faith Goals:</b> I’d like to meet more young adults my age in DFW and find more time for adoration <br><b>Activity Interests:</b> Join a Bible Study, Attend Young Adult Parish Events, Serve Local Community, Attend Sunday Mass, Adoration / Consistent Prayer Time<br><b>Additional Notes:</b> Finding people my own age is important to me and is one of the reasons I struggle to get involved in some of the other young adult groups because I feel very young compared to the average attendee and struggle to relate sometimes </div>`)[0];
+                popup_24b59392819623492a049a8deccc12df.setContent(html_79e6aa2ed24d2a5c1b9c51d69b07e722);
+            
+        
+
+        marker_ee1963e89be92171685a7e99bb0b00af.bindPopup(popup_24b59392819623492a049a8deccc12df)
+        ;
+
+        
+    
+    
+            var marker_0585114e69260ef660e26e06a1660ea9 = L.marker(
+                [32.8583, -96.7626],
+                {}
+            ).addTo(marker_cluster_1ea4b7cabdb1869fe88f1bd284a76a96);
+        
+    
+            var icon_a44df1185851e3e355e1336d8164c80b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "yellow", "prefix": "glyphicon"}
+            );
+            marker_0585114e69260ef660e26e06a1660ea9.setIcon(icon_a44df1185851e3e355e1336d8164c80b);
+        
+    
+        var popup_40093275e5783cf3477c5e013a3d64c3 = L.popup({"maxWidth": 300, "minWidth": 250, "style": "width: 300px;"});
+
+        
+            
+                var html_3c49f0b37c843bc80039cc57f4d1de96 = $(`<div id="html_3c49f0b37c843bc80039cc57f4d1de96" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Daphne Alpar<br><b>Parish:</b> St Thomas Aquinas<br><b>Current Faith:</b> Very private and by myself. I have started going to an Opus Dei women’s group but they tend to meet during my churches adoration night. <br><b>Faith Goals:</b> Consistency <br><b>Activity Interests:</b> Join a Bible Study, Spiritual / Intellectual / Human Formation, Discipleship<br><b>Additional Notes:</b> nan</div>`)[0];
+                popup_40093275e5783cf3477c5e013a3d64c3.setContent(html_3c49f0b37c843bc80039cc57f4d1de96);
+            
+        
+
+        marker_0585114e69260ef660e26e06a1660ea9.bindPopup(popup_40093275e5783cf3477c5e013a3d64c3)
+        ;
+
+        
+    
+    
+            var marker_57f3ed6f37123ee802402d9ec3b8e796 = L.marker(
+                [32.8801, -96.8139],
+                {}
+            ).addTo(marker_cluster_1ea4b7cabdb1869fe88f1bd284a76a96);
+        
+    
+            var icon_02bf27be2077a95116066782a14c348a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "yellow", "prefix": "glyphicon"}
+            );
+            marker_57f3ed6f37123ee802402d9ec3b8e796.setIcon(icon_02bf27be2077a95116066782a14c348a);
+        
+    
+        var popup_cc2a186c4e81b7e7ed31ccc6176caa79 = L.popup({"maxWidth": 300, "minWidth": 250, "style": "width: 300px;"});
+
+        
+            
+                var html_527dc0d2a2f59580b89af2e3524472c2 = $(`<div id="html_527dc0d2a2f59580b89af2e3524472c2" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Grace Wilson<br><b>Parish:</b> Christ the King<br><b>Current Faith:</b> Committed to daily prayer and daily Mass as often as possible while trying to figure out mission post grad and married<br><b>Faith Goals:</b> nan<br><b>Activity Interests:</b> Join a Bible Study, Lead a Bible Study<br><b>Additional Notes:</b> nan</div>`)[0];
+                popup_cc2a186c4e81b7e7ed31ccc6176caa79.setContent(html_527dc0d2a2f59580b89af2e3524472c2);
+            
+        
+
+        marker_57f3ed6f37123ee802402d9ec3b8e796.bindPopup(popup_cc2a186c4e81b7e7ed31ccc6176caa79)
+        ;
+
+        
+    
+    
+            var marker_c135d5182c0fb1538e2d400ba32cc082 = L.marker(
+                [32.7555, -97.3308],
+                {}
+            ).addTo(marker_cluster_1ea4b7cabdb1869fe88f1bd284a76a96);
+        
+    
+            var icon_ead7b0b96b49714e1f9742aaf0200807 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "yellow", "prefix": "glyphicon"}
+            );
+            marker_c135d5182c0fb1538e2d400ba32cc082.setIcon(icon_ead7b0b96b49714e1f9742aaf0200807);
+        
+    
+        var popup_1b2bb6947e1d0fe81de6f9c69fd1ba10 = L.popup({"maxWidth": 300, "minWidth": 250, "style": "width: 300px;"});
+
+        
+            
+                var html_abd3dadd6d2cfe76840ea986b09b86bf = $(`<div id="html_abd3dadd6d2cfe76840ea986b09b86bf" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Emmie Riethman <br><b>Parish:</b> Holy Family<br><b>Current Faith:</b> Daily prayer, mass, <br><b>Faith Goals:</b> Better community, bible study, discipleship<br><b>Activity Interests:</b> Join a Bible Study, Lead a Bible Study, Serve Local Community, Attend Daily Mass, Adoration / Consistent Prayer Time, Regular Confession, Spiritual / Intellectual / Human Formation, Discipleship<br><b>Additional Notes:</b> We need more people in Fort Worth!! Would love to help start a community in Fort Worth! </div>`)[0];
+                popup_1b2bb6947e1d0fe81de6f9c69fd1ba10.setContent(html_abd3dadd6d2cfe76840ea986b09b86bf);
+            
+        
+
+        marker_c135d5182c0fb1538e2d400ba32cc082.bindPopup(popup_1b2bb6947e1d0fe81de6f9c69fd1ba10)
+        ;
+
+        
+    
+    
+            var marker_c74baaea70cd44319cc502112408fb4d = L.marker(
+                [33.1983, -96.6389],
+                {}
+            ).addTo(marker_cluster_1ea4b7cabdb1869fe88f1bd284a76a96);
+        
+    
+            var icon_9d6461ca7d9148689e602d62355801cc = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "pink", "prefix": "glyphicon"}
+            );
+            marker_c74baaea70cd44319cc502112408fb4d.setIcon(icon_9d6461ca7d9148689e602d62355801cc);
+        
+    
+        var popup_ef28eb108fe63645da7929ae723ae997 = L.popup({"maxWidth": 300, "minWidth": 250, "style": "width: 300px;"});
+
+        
+            
+                var html_5e19a02fae859df77befa7d9098e7c7d = $(`<div id="html_5e19a02fae859df77befa7d9098e7c7d" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Olivia Alexander<br><b>Parish:</b> St Gabriel’s <br><b>Current Faith:</b> Prayer and sacraments <br><b>Faith Goals:</b> Learning mission lifelong after FOCUS <br><b>Activity Interests:</b> Join a Bible Study, Lead a Bible Study, Attend Young Adult Parish Events, Serve Local Community, Attend Sunday Mass, Attend Daily Mass, Adoration / Consistent Prayer Time, Regular Confession, Spiritual / Intellectual / Human Formation, Discipleship<br><b>Additional Notes:</b> I currently serve as a missionary in Nashville but am from dallas and struggle to find young adult community especially over the summers</div>`)[0];
+                popup_ef28eb108fe63645da7929ae723ae997.setContent(html_5e19a02fae859df77befa7d9098e7c7d);
+            
+        
+
+        marker_c74baaea70cd44319cc502112408fb4d.bindPopup(popup_ef28eb108fe63645da7929ae723ae997)
+        ;
+
+        
+    
+    
+            var marker_6b011efdde2510a8b4a7ace77cfdb860 = L.marker(
+                [32.8415, -96.8179],
+                {}
+            ).addTo(marker_cluster_1ea4b7cabdb1869fe88f1bd284a76a96);
+        
+    
+            var icon_b7fbac9732e6b08270942eebf7ff9489 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "gray", "prefix": "glyphicon"}
+            );
+            marker_6b011efdde2510a8b4a7ace77cfdb860.setIcon(icon_b7fbac9732e6b08270942eebf7ff9489);
+        
+    
+        var popup_7632b609287082120d01aedd78ba8784 = L.popup({"maxWidth": 300, "minWidth": 250, "style": "width: 300px;"});
+
+        
+            
+                var html_bf9dcc0d625dca529a9fc4d6ae0d0a08 = $(`<div id="html_bf9dcc0d625dca529a9fc4d6ae0d0a08" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Molly Dolan<br><b>Parish:</b> Christ the King<br><b>Current Faith:</b> nan<br><b>Faith Goals:</b> nan<br><b>Activity Interests:</b> Attend Young Adult Parish Events, Serve Local Community<br><b>Additional Notes:</b> nan</div>`)[0];
+                popup_7632b609287082120d01aedd78ba8784.setContent(html_bf9dcc0d625dca529a9fc4d6ae0d0a08);
+            
+        
+
+        marker_6b011efdde2510a8b4a7ace77cfdb860.bindPopup(popup_7632b609287082120d01aedd78ba8784)
+        ;
+
+        
+    
+    
+            var marker_5c270be8cc1eebdd757d7ff32a37a12f = L.marker(
+                [32.8466, -96.7871],
+                {}
+            ).addTo(marker_cluster_1ea4b7cabdb1869fe88f1bd284a76a96);
+        
+    
+            var icon_7907cf02e8178c1d1d8ff0fe23e796a5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "pink", "prefix": "glyphicon"}
+            );
+            marker_5c270be8cc1eebdd757d7ff32a37a12f.setIcon(icon_7907cf02e8178c1d1d8ff0fe23e796a5);
+        
+    
+        var popup_c91510c8ff154e2ee61b6061b4beb1c7 = L.popup({"maxWidth": 300, "minWidth": 250, "style": "width: 300px;"});
+
+        
+            
+                var html_2387ec8335b442293b1107812f60f084 = $(`<div id="html_2387ec8335b442293b1107812f60f084" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Drue Dolan<br><b>Parish:</b> Christ the King<br><b>Current Faith:</b> nan<br><b>Faith Goals:</b> nan<br><b>Activity Interests:</b> Attend Young Adult Parish Events, Serve Local Community, Adoration / Consistent Prayer Time<br><b>Additional Notes:</b> nan</div>`)[0];
+                popup_c91510c8ff154e2ee61b6061b4beb1c7.setContent(html_2387ec8335b442293b1107812f60f084);
+            
+        
+
+        marker_5c270be8cc1eebdd757d7ff32a37a12f.bindPopup(popup_c91510c8ff154e2ee61b6061b4beb1c7)
+        ;
+
+        
+    
+    
+            var marker_946c32befa04fd3d99fea3c41baeaf56 = L.marker(
+                [32.8034, -96.7984],
+                {}
+            ).addTo(marker_cluster_1ea4b7cabdb1869fe88f1bd284a76a96);
+        
+    
+            var icon_e53f9d32d091dedcc003b00fccac9f34 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
+            );
+            marker_946c32befa04fd3d99fea3c41baeaf56.setIcon(icon_e53f9d32d091dedcc003b00fccac9f34);
+        
+    
+        var popup_b12e3e1910ca7804aed0f171e9bc5549 = L.popup({"maxWidth": 300, "minWidth": 250, "style": "width: 300px;"});
+
+        
+            
+                var html_a166af794ea53c9508919e7cc18b0c2b = $(`<div id="html_a166af794ea53c9508919e7cc18b0c2b" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Chadwick Gonsalvez<br><b>Parish:</b> St Ann’s<br><b>Current Faith:</b> Daily prayer, weekly Mass, weekly Bible Study<br><b>Faith Goals:</b> More time with Scripture and a nightly examen. <br><b>Activity Interests:</b> Attend Young Adult Parish Events<br><b>Additional Notes:</b> nan</div>`)[0];
+                popup_b12e3e1910ca7804aed0f171e9bc5549.setContent(html_a166af794ea53c9508919e7cc18b0c2b);
+            
+        
+
+        marker_946c32befa04fd3d99fea3c41baeaf56.bindPopup(popup_b12e3e1910ca7804aed0f171e9bc5549)
+        ;
+
+        
+    
+    
+            var marker_d0f3a49764fb860c168855f93024a9a2 = L.marker(
+                [32.8034, -96.7984],
+                {}
+            ).addTo(marker_cluster_1ea4b7cabdb1869fe88f1bd284a76a96);
+        
+    
+            var icon_877f87b4b2a129669fe2bfcc3d31607b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_d0f3a49764fb860c168855f93024a9a2.setIcon(icon_877f87b4b2a129669fe2bfcc3d31607b);
+        
+    
+        var popup_e7b15faa8ce4ad91ca26015ef2e7502f = L.popup({"maxWidth": 300, "minWidth": 250, "style": "width: 300px;"});
+
+        
+            
+                var html_e3ad02126aa5c499e748a7ebc1341118 = $(`<div id="html_e3ad02126aa5c499e748a7ebc1341118" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Ellie Parker<br><b>Parish:</b> St. Peter the Apostle<br><b>Current Faith:</b> Currently, I try to go on prayer walks in the morning but am not as consistent as I would like. I think of God throughout the day and he directs my decisions and I pray an Our Father, Hail Mary, and Glory Be with my boyfriend every day.<br><b>Faith Goals:</b> I would like to have a greater source of Catholic community so I wouldn't feel so alone in my faith. I would like to desire prayer and the sacraments more.<br><b>Activity Interests:</b> Join a Bible Study, Attend Young Adult Parish Events, Attend Sunday Mass, Attend Daily Mass, Adoration / Consistent Prayer Time, Regular Confession, Spiritual / Intellectual / Human Formation<br><b>Additional Notes:</b> Thank y'all for doing this!</div>`)[0];
+                popup_e7b15faa8ce4ad91ca26015ef2e7502f.setContent(html_e3ad02126aa5c499e748a7ebc1341118);
+            
+        
+
+        marker_d0f3a49764fb860c168855f93024a9a2.bindPopup(popup_e7b15faa8ce4ad91ca26015ef2e7502f)
+        ;
+
+        
+    
+    
+            var marker_641a83fc8e93992cf901d2615a8ec570 = L.marker(
+                [29.4252, -98.4946],
+                {}
+            ).addTo(marker_cluster_1ea4b7cabdb1869fe88f1bd284a76a96);
+        
+    
+            var icon_18c6d7658d76dde375cc02058ecaba4a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_641a83fc8e93992cf901d2615a8ec570.setIcon(icon_18c6d7658d76dde375cc02058ecaba4a);
+        
+    
+        var popup_21c21945c140d24d562d6a0ae20fe4eb = L.popup({"maxWidth": 300, "minWidth": 250, "style": "width: 300px;"});
+
+        
+            
+                var html_5ff8bfdf48390fb9259b1b2dc8dc07ff = $(`<div id="html_5ff8bfdf48390fb9259b1b2dc8dc07ff" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Maggie May<br><b>Parish:</b> St. Peter Prince of the Apostles in San Antonio<br><b>Current Faith:</b> Weekly mass, occasional daily mass once a week, attempt pray a rosary and read daily readings each day<br><b>Faith Goals:</b> Longer prayer with the readings or other scripture. Accountability for adoration. Conversation in a Bible study. <br><b>Activity Interests:</b> Join a Bible Study, Spiritual / Intellectual / Human Formation, Discipleship<br><b>Additional Notes:</b> I am sorry if this is completely inappropriate to fill out since I live in San Antonio, but I know the FOCUS/Texas world can be small. Any community is greatly appreciated!! Thank you for all that you do!!</div>`)[0];
+                popup_21c21945c140d24d562d6a0ae20fe4eb.setContent(html_5ff8bfdf48390fb9259b1b2dc8dc07ff);
+            
+        
+
+        marker_641a83fc8e93992cf901d2615a8ec570.bindPopup(popup_21c21945c140d24d562d6a0ae20fe4eb)
+        ;
+
+        
+    
+    
+            var marker_1b74d5416472654b8f342822c45be6b8 = L.marker(
+                [32.8232, -96.7889],
+                {}
+            ).addTo(marker_cluster_1ea4b7cabdb1869fe88f1bd284a76a96);
+        
+    
+            var icon_444b32005c8f4f4ef151f9a121e3a8dc = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_1b74d5416472654b8f342822c45be6b8.setIcon(icon_444b32005c8f4f4ef151f9a121e3a8dc);
+        
+    
+        var popup_117f573f430bed56a3af88dfb0f9b2d7 = L.popup({"maxWidth": 300, "minWidth": 250, "style": "width: 300px;"});
+
+        
+            
+                var html_7695f5c43cffedf360f3c56d5c2398f6 = $(`<div id="html_7695f5c43cffedf360f3c56d5c2398f6" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Sophie DeMarco<br><b>Parish:</b> Holy Trinity<br><b>Current Faith:</b> Weekly mass and daily prayer<br><b>Faith Goals:</b> I’d like to read more of the Bible<br><b>Activity Interests:</b> Join a Bible Study, Regular Confession<br><b>Additional Notes:</b> When being connected with others I would prefer a group vs one on one! </div>`)[0];
+                popup_117f573f430bed56a3af88dfb0f9b2d7.setContent(html_7695f5c43cffedf360f3c56d5c2398f6);
+            
+        
+
+        marker_1b74d5416472654b8f342822c45be6b8.bindPopup(popup_117f573f430bed56a3af88dfb0f9b2d7)
+        ;
+
+        
+    
+    
+            var marker_98d4fde7c38aab5b54442c69f9fe695f = L.marker(
+                [32.8034, -96.7984],
+                {}
+            ).addTo(marker_cluster_1ea4b7cabdb1869fe88f1bd284a76a96);
+        
+    
+            var icon_71057e411b191dec05e27059464c5df4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
+            );
+            marker_98d4fde7c38aab5b54442c69f9fe695f.setIcon(icon_71057e411b191dec05e27059464c5df4);
+        
+    
+        var popup_6f4b2ada67ba67650474c80651ceaec8 = L.popup({"maxWidth": 300, "minWidth": 250, "style": "width: 300px;"});
+
+        
+            
+                var html_3c2b29d9b8e365afa6db963c46fc9f50 = $(`<div id="html_3c2b29d9b8e365afa6db963c46fc9f50" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Andrew Pye<br><b>Parish:</b> Holy Trinity / CTK<br><b>Current Faith:</b> nan<br><b>Faith Goals:</b> nan<br><b>Activity Interests:</b> Attend Young Adult Parish Events, Serve Local Community<br><b>Additional Notes:</b> nan</div>`)[0];
+                popup_6f4b2ada67ba67650474c80651ceaec8.setContent(html_3c2b29d9b8e365afa6db963c46fc9f50);
+            
+        
+
+        marker_98d4fde7c38aab5b54442c69f9fe695f.bindPopup(popup_6f4b2ada67ba67650474c80651ceaec8)
+        ;
+
+        
+    
+    
+            var marker_1a293ae4b144f9cdf33e711a6c2fa0bb = L.marker(
+                [32.8034, -96.7984],
+                {}
+            ).addTo(marker_cluster_1ea4b7cabdb1869fe88f1bd284a76a96);
+        
+    
+            var icon_8fe6dee439eadff6e8d54c9a1389f18d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "yellow", "prefix": "glyphicon"}
+            );
+            marker_1a293ae4b144f9cdf33e711a6c2fa0bb.setIcon(icon_8fe6dee439eadff6e8d54c9a1389f18d);
+        
+    
+        var popup_dd9607496743f10f8ce84dda803c4324 = L.popup({"maxWidth": 300, "minWidth": 250, "style": "width: 300px;"});
+
+        
+            
+                var html_5cbf4ab75fd252b8d065bd23cfb513c8 = $(`<div id="html_5cbf4ab75fd252b8d065bd23cfb513c8" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Annie Pye<br><b>Parish:</b> Holy Trinity / CTK <br><b>Current Faith:</b> FOCUS missionary so daily mass + holy hour <br><b>Faith Goals:</b> Community!!!<br><b>Activity Interests:</b> Join a Bible Study, Lead a Bible Study, Attend Young Adult Parish Events, Spiritual / Intellectual / Human Formation, Discipleship<br><b>Additional Notes:</b> nan</div>`)[0];
+                popup_dd9607496743f10f8ce84dda803c4324.setContent(html_5cbf4ab75fd252b8d065bd23cfb513c8);
+            
+        
+
+        marker_1a293ae4b144f9cdf33e711a6c2fa0bb.bindPopup(popup_dd9607496743f10f8ce84dda803c4324)
+        ;
+
+        
+    
+    
+            var marker_1279c17660048baf324f0811ca7a5037 = L.marker(
+                [33.0463, -96.9942],
+                {}
+            ).addTo(marker_cluster_1ea4b7cabdb1869fe88f1bd284a76a96);
+        
+    
+            var icon_5bb332c3dec76301ec3e55c237f18fdb = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
+            );
+            marker_1279c17660048baf324f0811ca7a5037.setIcon(icon_5bb332c3dec76301ec3e55c237f18fdb);
+        
+    
+        var popup_f620e396d1c21af5d16806f894820fe0 = L.popup({"maxWidth": 300, "minWidth": 250, "style": "width: 300px;"});
+
+        
+            
+                var html_9682eacae1e74838207933f0b461c0c9 = $(`<div id="html_9682eacae1e74838207933f0b461c0c9" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Dan Golden<br><b>Parish:</b> Our Lady of the Lake Maronite Church. Also St. Ann's in Coppell<br><b>Current Faith:</b> Going to church on Sunday and praying a daily rosary<br><b>Faith Goals:</b> I would like to have a closer relationship to the priests nearby and get spiritual direction.<br><b>Activity Interests:</b> Attend Sunday Mass, Adoration / Consistent Prayer Time, Regular Confession, Spiritual / Intellectual / Human Formation, Spiritual Direction<br><b>Additional Notes:</b> nan</div>`)[0];
+                popup_f620e396d1c21af5d16806f894820fe0.setContent(html_9682eacae1e74838207933f0b461c0c9);
+            
+        
+
+        marker_1279c17660048baf324f0811ca7a5037.bindPopup(popup_f620e396d1c21af5d16806f894820fe0)
+        ;
+
+        
+    
+    
+            var marker_4d28741cc724214b9d343ec628a97af3 = L.marker(
+                [32.8874, -96.7173],
+                {}
+            ).addTo(marker_cluster_1ea4b7cabdb1869fe88f1bd284a76a96);
+        
+    
+            var icon_12cdd3edaeb8e484b995c04224622bc4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "yellow", "prefix": "glyphicon"}
+            );
+            marker_4d28741cc724214b9d343ec628a97af3.setIcon(icon_12cdd3edaeb8e484b995c04224622bc4);
+        
+    
+        var popup_cdd18d63355c576fcb82dc797d2998e0 = L.popup({"maxWidth": 300, "minWidth": 250, "style": "width: 300px;"});
+
+        
+            
+                var html_63f42979b080f4442eb334f9b9786fc5 = $(`<div id="html_63f42979b080f4442eb334f9b9786fc5" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Candice Huffines<br><b>Parish:</b> Mater Dei<br><b>Current Faith:</b> nan<br><b>Faith Goals:</b> nan<br><b>Activity Interests:</b> Join a Bible Study, Lead a Bible Study, Attend Daily Mass, Spiritual / Intellectual / Human Formation, Discipleship<br><b>Additional Notes:</b> nan</div>`)[0];
+                popup_cdd18d63355c576fcb82dc797d2998e0.setContent(html_63f42979b080f4442eb334f9b9786fc5);
+            
+        
+
+        marker_4d28741cc724214b9d343ec628a97af3.bindPopup(popup_cdd18d63355c576fcb82dc797d2998e0)
+        ;
+
+        
+    
+    
+            var marker_617b3e9e54a8c93f6287a67b7fbf7f7f = L.marker(
+                [32.8034, -96.7984],
+                {}
+            ).addTo(marker_cluster_1ea4b7cabdb1869fe88f1bd284a76a96);
+        
+    
+            var icon_50c85e48d13f0b4adf7931849ca0321c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "pink", "prefix": "glyphicon"}
+            );
+            marker_617b3e9e54a8c93f6287a67b7fbf7f7f.setIcon(icon_50c85e48d13f0b4adf7931849ca0321c);
+        
+    
+        var popup_9f5016c47e3aa15c596eb0deba44b2db = L.popup({"maxWidth": 300, "minWidth": 250, "style": "width: 300px;"});
+
+        
+            
+                var html_8fea2dc996c2f32a144f6fed5eb3cd93 = $(`<div id="html_8fea2dc996c2f32a144f6fed5eb3cd93" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Renee Rizzo<br><b>Parish:</b> Holy Trinity<br><b>Current Faith:</b> Daily Prayer, Mass on Sundays, Leading and participating in bible study, occasional adoration and daily mass, confession every 1-2 months<br><b>Faith Goals:</b> Getting back to adoration more often! and being part of a Catholic community<br><b>Activity Interests:</b> Attend Young Adult Parish Events, Attend Daily Mass, Adoration / Consistent Prayer Time<br><b>Additional Notes:</b> nan</div>`)[0];
+                popup_9f5016c47e3aa15c596eb0deba44b2db.setContent(html_8fea2dc996c2f32a144f6fed5eb3cd93);
+            
+        
+
+        marker_617b3e9e54a8c93f6287a67b7fbf7f7f.bindPopup(popup_9f5016c47e3aa15c596eb0deba44b2db)
+        ;
+
+        
+    
+    
+            var marker_77d3716f5625a9333f97cbad7a7ae0a1 = L.marker(
+                [32.8034, -96.7984],
+                {}
+            ).addTo(marker_cluster_1ea4b7cabdb1869fe88f1bd284a76a96);
+        
+    
+            var icon_69937f7f18042a84dd14945974e37d53 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "gray", "prefix": "glyphicon"}
+            );
+            marker_77d3716f5625a9333f97cbad7a7ae0a1.setIcon(icon_69937f7f18042a84dd14945974e37d53);
+        
+    
+        var popup_592b4a19efaedc6efd25224a85aeeccd = L.popup({"maxWidth": 300, "minWidth": 250, "style": "width: 300px;"});
+
+        
+            
+                var html_ad18e62278123c67b80caaf0e19aa1b1 = $(`<div id="html_ad18e62278123c67b80caaf0e19aa1b1" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Megan Mariano<br><b>Parish:</b> Christ the King<br><b>Current Faith:</b> nan<br><b>Faith Goals:</b> nan<br><b>Activity Interests:</b> Attend Young Adult Parish Events, Spiritual / Intellectual / Human Formation, Discipleship<br><b>Additional Notes:</b> nan</div>`)[0];
+                popup_592b4a19efaedc6efd25224a85aeeccd.setContent(html_ad18e62278123c67b80caaf0e19aa1b1);
+            
+        
+
+        marker_77d3716f5625a9333f97cbad7a7ae0a1.bindPopup(popup_592b4a19efaedc6efd25224a85aeeccd)
+        ;
+
+        
+    
+    
+            var marker_61aa58dd7da01750e6dacf8dbfc7cdd7 = L.marker(
+                [32.9621, -96.7864],
+                {}
+            ).addTo(marker_cluster_1ea4b7cabdb1869fe88f1bd284a76a96);
+        
+    
+            var icon_4857905859dbdacdcd5056c87cc92ff1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "pink", "prefix": "glyphicon"}
+            );
+            marker_61aa58dd7da01750e6dacf8dbfc7cdd7.setIcon(icon_4857905859dbdacdcd5056c87cc92ff1);
+        
+    
+        var popup_88f518df93d78e7d4017b2d365ea05b4 = L.popup({"maxWidth": 300, "minWidth": 250, "style": "width: 300px;"});
+
+        
+            
+                var html_9dffa1c8d0b22e8e2d63faa7ba7cd36c = $(`<div id="html_9dffa1c8d0b22e8e2d63faa7ba7cd36c" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Katie Wick<br><b>Parish:</b> Christ the King<br><b>Current Faith:</b> nan<br><b>Faith Goals:</b> nan<br><b>Activity Interests:</b> Attend Young Adult Parish Events, Serve Local Community<br><b>Additional Notes:</b> nan</div>`)[0];
+                popup_88f518df93d78e7d4017b2d365ea05b4.setContent(html_9dffa1c8d0b22e8e2d63faa7ba7cd36c);
+            
+        
+
+        marker_61aa58dd7da01750e6dacf8dbfc7cdd7.bindPopup(popup_88f518df93d78e7d4017b2d365ea05b4)
+        ;
+
+        
+    
+    
+            var marker_ae5baddc79bcb6f8742b1b7dd57a195b = L.marker(
+                [32.9546, -97.015],
+                {}
+            ).addTo(marker_cluster_1ea4b7cabdb1869fe88f1bd284a76a96);
+        
+    
+            var icon_6782967eb394afb00f955caad9a972b4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "yellow", "prefix": "glyphicon"}
+            );
+            marker_ae5baddc79bcb6f8742b1b7dd57a195b.setIcon(icon_6782967eb394afb00f955caad9a972b4);
+        
+    
+        var popup_2266fb75288506b020e8f1a43ac138ee = L.popup({"maxWidth": 300, "minWidth": 250, "style": "width: 300px;"});
+
+        
+            
+                var html_416561a3e818b95a7ff8d5525d5f6309 = $(`<div id="html_416561a3e818b95a7ff8d5525d5f6309" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Stephanie Bilka<br><b>Parish:</b> St Ann’s<br><b>Current Faith:</b> I had a reconversion after I graduated and will forever be changed by the gift of my Catholic faith. I am a frequent goer of daily mass and confession. I spend time in daily prayer and feel like I’ve matured in my faith where I am now on mission with Christ to bring souls to Him. <br><b>Faith Goals:</b> I just recently moved to Dallas from Houston and am seeking to find Catholic community. I would love to lead or join a Bible study. <br><b>Activity Interests:</b> Join a Bible Study, Lead a Bible Study, Attend Young Adult Parish Events, Attend Sunday Mass<br><b>Additional Notes:</b> nan</div>`)[0];
+                popup_2266fb75288506b020e8f1a43ac138ee.setContent(html_416561a3e818b95a7ff8d5525d5f6309);
+            
+        
+
+        marker_ae5baddc79bcb6f8742b1b7dd57a195b.bindPopup(popup_2266fb75288506b020e8f1a43ac138ee)
+        ;
+
+        
+    
+    
+            var marker_2d34dc8b09a5bdac2b94a867fa4669fd = L.marker(
+                [32.8583, -96.7626],
+                {}
+            ).addTo(marker_cluster_1ea4b7cabdb1869fe88f1bd284a76a96);
+        
+    
+            var icon_bb45cd71149e1e83b1dea141483342b5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "gray", "prefix": "glyphicon"}
+            );
+            marker_2d34dc8b09a5bdac2b94a867fa4669fd.setIcon(icon_bb45cd71149e1e83b1dea141483342b5);
+        
+    
+        var popup_9b01661d9ace5b1545ca12784a9fdc31 = L.popup({"maxWidth": 300, "minWidth": 250, "style": "width: 300px;"});
+
+        
+            
+                var html_2e038490e37be0d71ebfa7ef1b091b73 = $(`<div id="html_2e038490e37be0d71ebfa7ef1b091b73" style="width: 100.0%; height: 100.0%;"><b>Name:</b> Madison Leyens<br><b>Parish:</b> Christ the King & Saint Thomas Aquinas<br><b>Current Faith:</b> Mass, ad hoc fellowship, leading a Bible study, helping out at SMU Catholic<br><b>Faith Goals:</b> Community events that incorporate the sacraments (daily Mass, regular adoration, etc.) to have greater sense of fellowship when there<br><b>Activity Interests:</b> Serve Local Community, Attend Daily Mass, Regular Confession<br><b>Additional Notes:</b> Let me know how I can help! I lead a Tuesday night Bible study for women every week that I am in town. Happy to have people join</div>`)[0];
+                popup_9b01661d9ace5b1545ca12784a9fdc31.setContent(html_2e038490e37be0d71ebfa7ef1b091b73);
+            
+        
+
+        marker_2d34dc8b09a5bdac2b94a867fa4669fd.bindPopup(popup_9b01661d9ace5b1545ca12784a9fdc31)
+        ;
+
+        
+    
+    
+            marker_cluster_1ea4b7cabdb1869fe88f1bd284a76a96.addTo(map_2a10654b688e7ca7e256f1ab00471885);
+        
+    
+            tile_layer_147e8383c1c811a78dab8c9eaa177b8d.addTo(map_2a10654b688e7ca7e256f1ab00471885);
+        
+    
+            marker_cluster_1ea4b7cabdb1869fe88f1bd284a76a96.addTo(map_2a10654b688e7ca7e256f1ab00471885);
+        
+</script>
+</html>
