@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"uri": "vscode-remote://codespaces+opulent-lamp-v66qqxwxjw6vh666g/workspaces/building-deep-learning-applications-with-keras-3837000"
+		}
+	],
+	"remoteAuthority": "codespaces+opulent-lamp-v66qqxwxjw6vh666g",
+	"settings": {
+		"explorer.openEditors.visible": 1,
+		"terminal.integrated.fontSize": 18,
+		"workbench.colorTheme": "Visual Studio Dark",
+		"python.languageServer": "Pylance",
+		"workbench.statusBar.visible": true
+	}
+}
