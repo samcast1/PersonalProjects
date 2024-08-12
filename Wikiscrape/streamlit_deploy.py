@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-from transformers import SentenceTransformer, util
+from sentence_transformers import SentenceTransformer, util
 import mysql.connector
 
 # Initialize the SBERT model
@@ -9,16 +9,16 @@ model = SentenceTransformer('all-MiniLM-L6-v2')
 # Connect to the database
 def connect_to_db():
     return mysql.connector.connect(
-        host="your_db_host",
-        user="your_db_user",
-        password="your_db_password",
-        database="your_db_name"
+        host="wikiscrape-db.c3oiygc2awdx.us-east-2.rds.amazonaws.com",
+        user="admin",
+        password="wikiscrape",
+        database="mydb"  
     )
 
 def get_data_from_db(date_range, event_type):
     db = connect_to_db()
     cursor = db.cursor(dictionary=True)
-    query = "SELECT * FROM your_table WHERE date BETWEEN %s AND %s AND event_type = %s"
+    query = "SELECT * FROM wiki_events_12 WHERE date BETWEEN %s AND %s AND event_type = %s"
     cursor.execute(query, (date_range[0], date_range[1], event_type))
     data = cursor.fetchall()
     db.close()
@@ -34,7 +34,7 @@ def find_most_similar_entry(tag, data):
 st.title("Wikipedia Data Query")
 
 date_range = st.date_input("Date Range", [])
-event_type = st.selectbox("Event Type", ["Type1", "Type2", "Type3"])
+event_type = st.selectbox("Event Type", ["Events", "Births", "Deaths"])
 tag = st.text_input("Tag")
 
 if st.button("Search"):

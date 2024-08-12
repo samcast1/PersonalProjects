@@ -107,7 +107,7 @@ def wikiload():
     cursor = connection.cursor()
 
     cursor.execute('''
-    CREATE TABLE IF NOT EXISTS wiki_events_11 (
+    CREATE TABLE IF NOT EXISTS wiki_events_12 (
         id INT AUTO_INCREMENT PRIMARY KEY,
         date VARCHAR(20),
         year VARCHAR(10),
@@ -169,11 +169,24 @@ def wikiload():
 
             for text, links in data_list:
                 year = text.split(" ")[0]
-                if not year.isdigit():
-                  print('Non digit Year:', year)
-                  print('Text:', text)
+                if year == 'AD':
+                  print("Converting year from 'AD' . . .")
                   year = text.split(" ")[1]
+                  print("Converted year:", year)
+
+                if not year.isdigit():
+                  print("Whole text: ", text)
+                  print('Non digit Year:', year)
+                  match = re.search(r'\d+', text)
+                  if match:
+                    year = match.group()
+                    print("Extracted Year:", year)
+                  else:
+                    print("No digits found in text")
+                    continue
+
                 text = " ".join(text.split(" ")[2:])
+
                 if text.startswith("–"):
                   print('Text starts with dash:', text)
                   text = text[1:].strip()  # Remove the dash and any leading whitespace
@@ -204,7 +217,7 @@ def wikiload():
 
               # Insert the row into the MySQL database
                 cursor.execute(f'''
-                    INSERT INTO wiki_events_11 ({', '.join(columns)})
+                    INSERT INTO wiki_events_12 ({', '.join(columns)})
                     VALUES ({placeholder})
                 ''', row)
 
