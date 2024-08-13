@@ -53,7 +53,7 @@ def get_days_in_month(month):
 st.title("Welcome to WikiSimilar!")
 
 st.write("""This application is all about expanding your knowledge of history.
-          Depending on your friends, you will be the life of the party! \n \n The app utilizes a custom web-scraper that loads Wikipedia data into a MySQL database. 
+          Depending on your friends, you will be the life of the party. \n \n The app utilizes a custom web-scraper that loads Wikipedia data into a MySQL database. 
          When you set the parameters below, the app will query the database accordingly.
          The best part is the tag at the end - search for anything! Musicians, wars, kingdoms, discoveries...
          The app will apply cosine similarity to the entries in the database to provide some info
