@@ -52,7 +52,9 @@ def get_days_in_month(month):
 # Streamlit app
 st.title("Welcome to WikiSimilar!")
 
-st.write("""This application utilizes a web-scraper that loads into a MySQL database. 
+st.write("""This application is all about expanding your knowledge of history. Depending on your friends, you will be the life of the party! \n
+         
+         The app utilizes a custom web-scraper that loads Wikipedia data into a MySQL database. 
          When you set the parameters below, the app will query the database accordingly.
          The best part is the tag at the end - search for anything! Musicians, wars, kingdoms, discoveries...
          The app will apply cosine similarity to the entries in the database to provide some info
@@ -85,11 +87,11 @@ start_year, end_year = st.slider(
 
 # Event type input
 st.subheader("Select A Category")
-event_type = st.selectbox("Are you interested in a historical event, a birth, or a death?", ["event", "birth", "death"])
+event_type = st.selectbox("Are you interested in a historical event, birth, or death?", ["event", "birth", "death"])
 
 # Tag input
 st.subheader("Is there anything in particular you'd like to search for?")
-tag = st.text_input("""Enter a tag - be creative and as detailed as you'd like! (e.g., "Valiant knight", "photoelectric effect")""")
+tag = st.text_input("""Enter a tag - be creative and as detailed as you'd like! (e.g., "Valiant knight" or "photoelectric effect")""")
 
 # Search button
 if st.button("Search"):
