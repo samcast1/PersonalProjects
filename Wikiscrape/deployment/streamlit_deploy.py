@@ -98,11 +98,20 @@ if st.button("Search"):
             data = get_data_from_db(date_range, event_type)
             
             if not data.empty:
+
+                event_placeholder = ''
+                if event_type == 'event':
+                    event_placeholder = "**Event: **"
+                elif event_type == 'birth':
+                    event_placeholder = "**Birth: **"
+                elif event_type == 'death':
+                    event_placeholder == "**Death: **"
+                    
                 result = find_most_similar_entry(tag, data)
                 st.subheader("Result")
                 st.write(f"**Date:** {result['date']}")
                 st.write(f"**Year:** {result['year']}")
-                st.write(f"**Event:** {result['text']}")
+                st.write(f"{event_placeholder} {result['text']}")
                 
                 st.subheader("Learn more below!")
                 for i in range(1, 21):
