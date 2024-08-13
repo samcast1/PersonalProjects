@@ -84,12 +84,12 @@ event_type = st.selectbox("Event Type", ["event", "birth", "death"])
 
 event_placeholder = ''
 if event_type == 'event':
-    event_placeholder = "**Event: **"
+    event_placeholder = "Event: "
 elif event_type == 'birth':
-    event_placeholder = "**Birth: **"
+    event_placeholder = "Birth: "
 elif event_type == 'death':
-    event_placeholder == "**Death: **"
-    
+    event_placeholder = "Death: "
+
 # Tag input
 st.subheader("Is there anything in particular you'd like to search for?")
 tag = st.text_input("Enter a tag")
@@ -111,7 +111,7 @@ if st.button("Search"):
                 st.subheader("Result")
                 st.write(f"**Date:** {result['date']}")
                 st.write(f"**Year:** {result['year']}")
-                st.write(f"{event_placeholder} {result['text']}")
+                st.write(f"**{event_placeholder}** {result['text']}")
                 
                 st.subheader("Learn more below!")
                 for i in range(1, 21):
