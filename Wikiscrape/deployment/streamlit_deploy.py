@@ -52,6 +52,12 @@ def get_days_in_month(month):
 # Streamlit app
 st.title("Welcome to WikiSimilar!")
 
+st.write("""This application utilizes a web-scraper that loads into a MySQL database. 
+         When you set the parameters below, the app will query the database accordingly. 
+         The best part is the tag at the end - search for anything! Musicians, wars, kingdoms, discoveries...
+         The app will apply cosine similarity to the entries in the database to provide some info on the entry most similar to your search.
+         
+         Careful - learning is addictive! """)
 # Date input
 st.subheader("Select a date range")
 
