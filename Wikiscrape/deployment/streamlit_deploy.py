@@ -85,11 +85,11 @@ start_year, end_year = st.slider(
 
 # Event type input
 st.subheader("Select A Category")
-event_type = st.selectbox("Event Type", ["event", "birth", "death"])
+event_type = st.selectbox("Are you interested in a historical event, a birth, or a death?", ["event", "birth", "death"])
 
 # Tag input
 st.subheader("Is there anything in particular you'd like to search for?")
-tag = st.text_input("""Enter a tag - be creative and as detailed as you'd like! (e.g., "Valiant knight", "photoelectric effect", or "Paris Olympics". . .)""")
+tag = st.text_input("""Enter a tag - be creative and as detailed as you'd like! (e.g., "Valiant knight", "photoelectric effect")""")
 
 # Search button
 if st.button("Search"):
@@ -108,7 +108,13 @@ if st.button("Search"):
                 st.subheader("Result")
                 st.write(f"**Date:** {result['date']}")
                 st.write(f"**Year:** {result['year']}")
-                st.write(f"**Event:** {result['text']}")
+                if event_type == 'event':
+                    st.write(f"**Event:** {result['text']}")
+                elif event_type == 'birth':
+                    st.write(f"**Birth:** {result['text']}")
+                elif event_type == 'death':
+                    st.write(f"**Death:** {result['text']}")
+
                 
                 st.subheader("Learn more below!")
                 for i in range(1, 21):
