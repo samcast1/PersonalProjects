@@ -111,7 +111,7 @@ if st.button("Search"):
                 st.subheader("Result")
                 st.write(f"**Date:** {result['date']}")
                 st.write(f"**Year:** {result['year']}")
-                st.write(f"**{event_placeholder}** {result['text']}")
+                st.markdown(f"**{event_placeholder}** {result['text']}")
                 
                 st.subheader("Learn more below!")
                 for i in range(1, 21):
