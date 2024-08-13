@@ -90,7 +90,7 @@ event_type = st.selectbox("Are you interested in a historical event, birth, or d
 
 # Tag input
 st.subheader("Is there anything in particular you'd like to search for?")
-tag = st.text_input("""Enter a tag - be creative and as detailed as you'd like! (e.g., "Valiant knight" or "photoelectric effect")""")
+tag = st.text_input("""Enter a tag - be as creative and detailed as you'd like! (e.g., "Valiant knight" or "photoelectric effect")""")
 
 # Search button
 if st.button("Search"):
