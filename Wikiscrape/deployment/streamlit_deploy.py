@@ -58,7 +58,7 @@ st.write("""This application utilizes a web-scraper that loads into a MySQL data
          The app will apply cosine similarity to the entries in the database to provide some info
           on the entry most similar to your search. \n \n Happy learning! """)
 # Date input
-st.subheader("Select a date range")
+st.subheader("Select A Date Range")
 
 # Month selection for start date
 start_month = st.selectbox("Start Month", ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'])
@@ -75,7 +75,7 @@ end_days = get_days_in_month(end_month)
 end_day = st.selectbox("End Day", end_days)
 
 # Year range input
-st.subheader("Select a year range")
+st.subheader("Select A Year Range")
 start_year, end_year = st.slider(
     "Year Range",
     min_value=-300,
@@ -84,12 +84,12 @@ start_year, end_year = st.slider(
 )
 
 # Event type input
-st.subheader("Select event type")
+st.subheader("Select A Category")
 event_type = st.selectbox("Event Type", ["event", "birth", "death"])
 
 # Tag input
 st.subheader("Is there anything in particular you'd like to search for?")
-tag = st.text_input("Enter a tag")
+tag = st.text_input("""Enter a tag - be creative and as detailed as you'd like! (e.g., "Valiant knight", "photoelectric effect", or "Paris Olympics". . .)""")
 
 # Search button
 if st.button("Search"):
