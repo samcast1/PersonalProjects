@@ -107,7 +107,7 @@ def wikiload():
     cursor = connection.cursor()
 
     cursor.execute('''
-    CREATE TABLE IF NOT EXISTS wiki_events_12 (
+    CREATE TABLE IF NOT EXISTS wiki_events (
         id INT AUTO_INCREMENT PRIMARY KEY,
         date VARCHAR(20),
         year VARCHAR(10),
@@ -168,6 +168,10 @@ def wikiload():
             link_urls = [None] * 20
 
             for text, links in data_list:
+
+                tags = [None] * 20
+                link_urls = [None] * 20
+
                 year = text.split(" ")[0]
                 if year == 'AD':
                   print("Converting year from 'AD' . . .")
@@ -203,7 +207,7 @@ def wikiload():
 
                 for i, (tag, link) in enumerate(links[:20]):  # Limit to the first 20 tags/links
                     tag = unquote(tag).strip()
-                    if not tag == date:
+                    if not tag == date or 'BC' in tag:
                         tags[i] = tag
                         link_urls[i] = link
 
@@ -217,7 +221,7 @@ def wikiload():
 
               # Insert the row into the MySQL database
                 cursor.execute(f'''
-                    INSERT INTO wiki_events_12 ({', '.join(columns)})
+                    INSERT INTO wiki_events ({', '.join(columns)})
                     VALUES ({placeholder})
                 ''', row)
 
